@@ -1,6 +1,6 @@
 {
   "name": "slidev-addon-naive",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "An addon that brings Naive UI components to Slidev.",
   "author": "Samuel Huang",
   "license": "MIT",
