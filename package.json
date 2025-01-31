@@ -3,7 +3,8 @@
     "type": "module",
     "version": "0.0.1",
     "scripts": {
-        "dev": "slidev"
+        "dev": "slidev",
+        "build": "bun run generate.js"
     },
     "dependencies": {
         "naive-ui": "^2.41.0"
