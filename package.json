@@ -1,16 +1,17 @@
 {
-    "name": "slidev-addon-naive",
-    "type": "module",
-    "version": "0.0.1",
-    "scripts": {
-        "dev": "slidev"
-    },
-    "dependencies": {
-        "naive-ui": "^2.41.0"
-    },
-    "devDependencies": {
-        "@slidev/cli": "^51.1.0",
-        "@slidev/theme-default": "^0.25.0",
-        "prettier": "^3.4.2"
-    }
+  "name": "slidev-addon-naive",
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "slidev",
+    "build": "bun run generate.js"
+  },
+  "dependencies": {
+    "naive-ui": "^2.41.0"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^51.1.0",
+    "@slidev/theme-default": "^0.25.0",
+    "prettier": "^3.4.2"
+  }
 }
