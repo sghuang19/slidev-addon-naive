@@ -1,7 +1,13 @@
 import fs from "fs";
 import path from "path";
+import * as naive from "naive-ui";
 
-const componentNames = ["NCard", "NButton"];
+const componentNames = Object.keys(naive).filter(
+  (key) => key.startsWith('N') && key[1] === key[1].toUpperCase()
+);
+console.log("List of components:");
+console.log(componentNames);
+
 const outputDir = "./components";
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
