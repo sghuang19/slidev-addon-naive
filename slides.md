@@ -11,112 +11,112 @@ addons:
 
 Basic
 
-<n-space>
-  <n-button>Default</n-button>
-  <n-button type="tertiary">
+<NSpace>
+  <NButton>Default</NButton>
+  <NButton type="tertiary">
     Tertiary
-  </n-button>
-  <n-button type="primary">
+  </NButton>
+  <NButton type="primary">
     Primary
-  </n-button>
-  <n-button type="info">
+  </NButton>
+  <NButton type="info">
     Info
-  </n-button>
-  <n-button type="success">
+  </NButton>
+  <NButton type="success">
     Success
-  </n-button>
-  <n-button type="warning">
+  </NButton>
+  <NButton type="warning">
     Warning
-  </n-button>
-  <n-button type="error">
+  </NButton>
+  <NButton type="error">
     Error
-  </n-button>
-</n-space>
+  </NButton>
+</NSpace>
 
 Secondary button
 
-<n-space>
-  <n-button strong secondary>
+<NSpace>
+  <NButton strong secondary>
     Default
-  </n-button>
-  <n-button strong secondary type="tertiary">
+  </NButton>
+  <NButton strong secondary type="tertiary">
     Tertiary
-  </n-button>
-  <n-button strong secondary type="primary">
+  </NButton>
+  <NButton strong secondary type="primary">
     Primary
-  </n-button>
-  <n-button strong secondary type="info">
+  </NButton>
+  <NButton strong secondary type="info">
     Info
-  </n-button>
-  <n-button strong secondary type="success">
+  </NButton>
+  <NButton strong secondary type="success">
     Success
-  </n-button>
-  <n-button strong secondary type="warning">
+  </NButton>
+  <NButton strong secondary type="warning">
     Warning
-  </n-button>
-  <n-button strong secondary type="error">
+  </NButton>
+  <NButton strong secondary type="error">
     Error
-  </n-button>
-  <n-button strong secondary round>
+  </NButton>
+  <NButton strong secondary round>
     Default
-  </n-button>
-  <n-button strong secondary round type="primary">
+  </NButton>
+  <NButton strong secondary round type="primary">
     Primary
-  </n-button>
-  <n-button strong secondary round type="info">
+  </NButton>
+  <NButton strong secondary round type="info">
     Info
-  </n-button>
-  <n-button strong secondary round type="success">
+  </NButton>
+  <NButton strong secondary round type="success">
     Success
-  </n-button>
-  <n-button strong secondary round type="warning">
+  </NButton>
+  <NButton strong secondary round type="warning">
     Warning
-  </n-button>
-  <n-button strong secondary round type="error">
+  </NButton>
+  <NButton strong secondary round type="error">
     Error
-  </n-button>
-</n-space>
+  </NButton>
+</NSpace>
 
 Tertiary button
 
-<n-space>
-  <n-button tertiary>
+<NSpace>
+  <NButton tertiary>
     Default
-  </n-button>
-  <n-button tertiary type="primary">
+  </NButton>
+  <NButton tertiary type="primary">
     Primary
-  </n-button>
-  <n-button tertiary type="info">
+  </NButton>
+  <NButton tertiary type="info">
     Info
-  </n-button>
-  <n-button tertiary type="success">
+  </NButton>
+  <NButton tertiary type="success">
     Success
-  </n-button>
-  <n-button tertiary type="warning">
+  </NButton>
+  <NButton tertiary type="warning">
     Warning
-  </n-button>
-  <n-button tertiary type="error">
+  </NButton>
+  <NButton tertiary type="error">
     Error
-  </n-button>
-  <n-button tertiary round>
+  </NButton>
+  <NButton tertiary round>
     Default
-  </n-button>
-  <n-button tertiary round type="primary">
+  </NButton>
+  <NButton tertiary round type="primary">
     Primary
-  </n-button>
-  <n-button tertiary round type="info">
+  </NButton>
+  <NButton tertiary round type="info">
     Info
-  </n-button>
-  <n-button tertiary round type="success">
+  </NButton>
+  <NButton tertiary round type="success">
     Success
-  </n-button>
-  <n-button tertiary round type="warning">
+  </NButton>
+  <NButton tertiary round type="warning">
     Warning
-  </n-button>
-  <n-button tertiary round type="error">
+  </NButton>
+  <NButton tertiary round type="error">
     Error
-  </n-button>
-</n-space>
+  </NButton>
+</NSpace>
 
 ---
 
