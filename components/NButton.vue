@@ -1,9 +1,11 @@
 <script setup>
-  import { NButton } from 'naive-ui'
+import { NButton } from "naive-ui";
 </script>
 
 <template>
-    <n-button v-bind="$attrs">
-        <slot></slot>
-    </n-button>
+  <NButton v-bind="$attrs">
+    <template v-for="(_, name) in $slots" #[name]="slotProps">
+      <slot :name="name" v-bind="slotProps || {}" />
+    </template>
+  </NButton>
 </template>
