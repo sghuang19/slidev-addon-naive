@@ -117,3 +117,30 @@ Tertiary button
     Error
   </n-button>
 </n-space>
+
+---
+
+## NCard
+
+<div style="display: flex; gap: 25px;">
+  <NCard title="Card with Cover">
+    <template #cover>
+      <img v-else src="https://picsum.photos/400/200">
+    </template>
+    Lorem ipsum dolor sit amet veniam nostrud magna dolore veniam pariatur. Dolor
+    incididunt duis ipsum sit cupidatat. Elit qui aliquip anim minim laborum duis
+    ea ut elit in eiusmod cillum eu proident commodo reprehenderit nisi commodo.
+  </NCard>
+  <NCard title="Card Slots Demo">
+    <template #header-extra>
+      #header-extra
+    </template>
+    Card Content
+    <template #footer>
+      #footer
+    </template>
+    <template #action>
+      #action
+    </template>
+  </NCard>
+</div>
