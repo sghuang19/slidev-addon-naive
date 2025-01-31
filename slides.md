@@ -125,7 +125,7 @@ Tertiary button
 <div style="display: flex; gap: 25px;">
   <NCard title="Card with Cover">
     <template #cover>
-      <img v-else src="https://picsum.photos/400/200">
+      <img src="https://picsum.photos/400/200" alt="cover">
     </template>
     Lorem ipsum dolor sit amet veniam nostrud magna dolore veniam pariatur. Dolor
     incididunt duis ipsum sit cupidatat. Elit qui aliquip anim minim laborum duis
