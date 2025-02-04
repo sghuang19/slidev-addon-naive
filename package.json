@@ -2,23 +2,23 @@
   "name": "slidev-addon-naive",
   "version": "0.4.0",
   "description": "An addon that brings Naive UI components to Slidev.",
-  "author": "Samuel Huang",
-  "license": "MIT",
+  "keywords": [
+    "naive-ui",
+    "slideshow",
+    "slidev",
+    "slidev-addon",
+    "vue"
+  ],
+  "homepage": "https://github.com/sghuang19/slidev-addon-naive#readme",
+  "bugs": {
+    "url": "https://github.com/sghuang19/slidev-addon-naive/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/sghuang19/slidev-addon-naive"
   },
-  "bugs": {
-    "url": "https://github.com/sghuang19/slidev-addon-naive/issues"
-  },
-  "homepage": "https://github.com/sghuang19/slidev-addon-naive#readme",
-  "keywords": [
-    "slidev",
-    "naive-ui",
-    "slidev-addon",
-    "vue",
-    "slideshow"
-  ],
+  "license": "MIT",
+  "author": "Samuel Huang",
   "type": "module",
   "scripts": {
     "dev": "slidev"
