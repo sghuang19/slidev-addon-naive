@@ -44,6 +44,7 @@ export default defineAppSetup(({ app }) => {
      * !!! IMPORTANT !!!
      * Missing properties here can cause misbehavior of components
      * If components behave unexpectedly, check n-config-provider properties first
+     * This is defined in src/config-provider/ConfigProvider.ts
      */
     app.provide("n-config-provider", {
       mergedThemeRef: computed(() => (isDark.value ? darkTheme : lightTheme)), // required
