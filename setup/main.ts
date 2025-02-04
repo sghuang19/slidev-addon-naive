@@ -28,10 +28,9 @@ export default defineAppSetup(({ app }) => {
   // Set up naive-ui
   app.use(naive);
 
-  // TODO: can this be done by importing CSS?
   // Inject Naive UI styles into <head> element
   if (typeof window !== "undefined") {
-    const head = document.head || document.getElementsByTagName("head")[0];
+    const head = document.head;
     ["naive-ui-style", "vueuc-style"].forEach((name) => {
       const meta = document.createElement("meta");
       meta.name = name;
