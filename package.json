@@ -21,8 +21,7 @@
   ],
   "type": "module",
   "scripts": {
-    "dev": "slidev",
-    "build": "bun run generate.js"
+    "dev": "slidev"
   },
   "dependencies": {
     "naive-ui": "^2.41.0"
