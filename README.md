@@ -4,9 +4,9 @@ A [Slidev](https://sli.dev) addon that brings [Naive UI](https://naiveui.com)
 components to your slides.
 
 <div align="center">
-  <a href="https://npmjs.com/package/slidev-addon-prime">
+  <a href="https://npmjs.com/package/slidev-addon-naive">
     <img
-      src="https://img.shields.io/npm/v/slidev-addon-prime?color=2B90B6"
+      src="https://img.shields.io/npm/v/slidev-addon-naive?color=2B90B6"
       alt="NPM version"
     >
   </a>
