@@ -79,3 +79,12 @@ supported, along with full compatibility for props and slots.
 > 1. Tag names that have dashes in them may not be correctly syntax-highlighted
 >    in Markdown files.
 > 2. Pascal Case convention aligns with other components used in Slidev.
+
+## Latest Changes
+
+- **`v0.5.1`:** Improved logic in `main.ts`.
+- **`v0.5.0`:** Added support for dynamic dark theme.
+- **`v0.4.0:`** Fixed a bug that caused Naive UI styles not loaded.
+- **`v0,3.0:`** Adopted a new way of loading components.
+- **`v0.2.0:`** Added all components.
+- **`v0.1.0:`** First working version with a few components.
