@@ -144,3 +144,57 @@ Tertiary button
     </template>
   </NCard>
 </div>
+
+---
+
+## NList
+
+<n-list hoverable clickable>
+  <n-list-item>
+    <n-thing title="Better Late Than Never" content-style="margin-top: 10px;">
+      <template #description>
+        <n-space size="small" style="margin-top: 4px">
+          <n-tag :bordered="false" type="info" size="small">
+            Tag A
+          </n-tag>
+          <n-tag :bordered="false" type="info" size="small">
+            Tag B
+          </n-tag>
+        </n-space>
+      </template>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco.
+    </n-thing>
+  </n-list-item>
+  <n-list-item>
+    <n-thing title="Lorem Ipsum" content-style="margin-top: 10px;">
+      <template #description>
+        <n-space size="small" style="margin-top: 4px">
+          <n-tag :bordered="false" type="info" size="small">
+            Tag C
+          </n-tag>
+          <n-tag :bordered="false" type="info" size="small">
+            Tag D
+          </n-tag>
+        </n-space>
+      </template>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco.
+    </n-thing>
+  </n-list-item>
+</n-list>
+
+---
+
+## NMarquee
+
+<n-marquee auto-fill>
+  <n-image
+    width="80"
+    height="80"
+    src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg"
+    style="margin-right: 24px"
+  />
+</n-marquee>
