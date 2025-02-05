@@ -3,6 +3,15 @@
 A [Slidev](https://sli.dev) addon that brings [Naive UI](https://naiveui.com)
 components to your slides.
 
+<div align="center">
+  <a href="https://npmjs.com/package/slidev-addon-prime">
+    <img
+      src="https://img.shields.io/npm/v/slidev-addon-prime?color=2B90B6"
+      alt="NPM version"
+    >
+  </a>
+</div>
+
 ## Usage
 
 Install the package, with your package manager of choice:
@@ -16,6 +25,7 @@ bun add slidev-addon-naive
 
 Then, enable this addon for your slides using front matter:
 
+<!-- prettier-ignore -->
 ```markdown
 <!-- slides.md -->
 ---
@@ -26,7 +36,8 @@ addons:
 ...
 ```
 
-Alternatively, you can enable the addon by adding the following property into `package.json`:
+Alternatively, you can enable the addon by adding the following property into
+`package.json`:
 
 ```json
 {
@@ -40,7 +51,8 @@ You can now seamlessly use Naive UI components in your slides, just as you would
 in any other Vue application! Both `<n-name>` and `<NName>` syntaxes are
 supported, along with full compatibility for props and slots.
 
-```markdown
+<!-- prettier-ignore -->
+```html
 <n-button strong tertiary>Button</n-button>
 
 <NButton>Button</NButton>
