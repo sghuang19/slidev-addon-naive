@@ -22,7 +22,8 @@
   "type": "module",
   "files": [
     "setup/main.ts",
-    "slides.md"
+    "slides.md",
+    "uno.config.ts"
   ],
   "scripts": {
     "dev": "slidev"
