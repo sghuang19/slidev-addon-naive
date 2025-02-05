@@ -82,6 +82,8 @@ supported, along with full compatibility for props and slots.
 
 ## Latest Changes
 
+- **`v0.6.0`:** Added full support for UnoCSS utility classes. No more `!`
+  prefixes needed!
 - **`v0.5.1`:** Improved logic in `main.ts`.
 - **`v0.5.0`:** Added support for dynamic dark theme.
 - **`v0.4.0:`** Fixed a bug that caused Naive UI styles not loaded.

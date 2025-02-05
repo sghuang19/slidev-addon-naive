@@ -1,6 +1,6 @@
 {
   "name": "slidev-addon-naive",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "An addon that brings Naive UI components to Slidev.",
   "keywords": [
     "naive-ui",
@@ -22,7 +22,8 @@
   "type": "module",
   "files": [
     "setup/main.ts",
-    "slides.md"
+    "slides.md",
+    "uno.config.ts"
   ],
   "scripts": {
     "dev": "slidev"
