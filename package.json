@@ -20,6 +20,10 @@
   "license": "MIT",
   "author": "Samuel Huang",
   "type": "module",
+  "files": [
+    "setup/main.ts",
+    "slides.md"
+  ],
   "scripts": {
     "dev": "slidev"
   },
