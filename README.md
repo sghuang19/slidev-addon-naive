@@ -80,6 +80,13 @@ supported, along with full compatibility for props and slots.
 >    in Markdown files.
 > 2. Pascal Case convention aligns with other components used in Slidev.
 
+## Known Issues
+
+- The `uno.config.ts` file in your project will be **overridden** by this addon.
+  If your slides rely on the configurations in that file, consider using this
+  addon in a **"headless" mode** by copying the necessary code directly into
+  your project instead.
+
 ## Latest Changes
 
 - **`v0.6.0`:** Added full support for UnoCSS utility classes. No more `!`
