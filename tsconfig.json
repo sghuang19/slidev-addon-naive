@@ -3,16 +3,11 @@
     "paths": {
       "slidev-addon-naive": ["./src/index.ts"]
     },
-    "outDir": "dist",
-    "rootDir": "src",
     "module": "NodeNext",
     "moduleResolution": "nodenext",
-    "target": "ESNext",
-    "declaration": true,
-    "declarationMap": true,
-    "skipLibCheck": true,
     "strict": true,
     "allowImportingTsExtensions": true,
     "noEmit": true
-  }
+  },
+  "include": ["setup", "src", "uno.config.ts"]
 }
