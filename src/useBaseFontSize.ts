@@ -1,5 +1,7 @@
 import { ref } from "vue";
 
+// TODO: is it possible to use fontSize as a regular var instead of ref?
+
 const fontSize = ref("16px"); // default font size
 
 const setBaseFontSize = () => {

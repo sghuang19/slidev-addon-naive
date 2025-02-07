@@ -3,7 +3,7 @@ import { darkTheme, lightTheme } from "naive-ui";
 import { ConfigProviderInjection } from "naive-ui/es/config-provider/src/internal-interface.js";
 
 import isDark from "./useDarkTheme.ts";
-import baseFontSize from "./useBaseFontSizes.ts";
+import baseFontSize from "./useBaseFontSize.ts";
 
 /**
  * I'm trying to mimic the design of original Naive UI, which can be found by
