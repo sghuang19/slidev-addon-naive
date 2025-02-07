@@ -100,10 +100,12 @@ supported, along with full compatibility for props and slots.
 
 ## Known Issues
 
+- No JavaScript support yet. Please use runtime that natively supports
+  TypeScript such as [Bun](https://bun.sh) or
+  [Node since `v22.6.0`](https://nodejs.org/en/learn/typescript/run-natively).
 - The `uno.config.ts` file in your project will be **overridden** by this addon.
   If your slides rely on the configurations in that file, consider using this
-  addon in a **"headless" mode** by copying the necessary code directly into
-  your project instead.
+  addon as a [Vue Plugin](#as-a-vue-plugin-experimental) (requires `v0.7.0`).
 
 ## Latest Changes
 
