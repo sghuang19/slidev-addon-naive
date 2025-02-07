@@ -2,12 +2,16 @@ import { ref, type Ref } from "vue";
 
 const fontSize = ref("16px"); // default font size
 
-const updateFontSize = () => {
+const updateBaseFontSize = () => {
   const element = document.querySelector(".slidev-layout");
   if (element) {
-    const computedStyles = window.getComputedStyle(element);
-    fontSize.value = computedStyles.fontSize;
+    const computedStyle = window.getComputedStyle(element);
+    fontSize.value = computedStyle.fontSize;
     console.debug("[Naive] Base font size:", fontSize.value);
+  } else {
+    console.error(
+      "[Naive] .slidev-layout element not found, using default font size",
+    );
   }
 };
 
@@ -19,36 +23,24 @@ const useBaseFontSizes = (): Ref<string> => {
     return fontSize;
   }
 
-  let observer: MutationObserver | null = null;
-
   // Setup observer for DOM changes
-  observer = new MutationObserver((mutations) => {
+  const observer = new MutationObserver(() => {
     const slidevLayout = document.querySelector(".slidev-layout");
 
     if (slidevLayout) {
-      console.debug(
-        "[Naive] Found .slidev-layout, switching to style observation",
-      );
-      // Stop observing the document body
-      observer?.disconnect();
-
-      // Start observing the specific element for style changes
-      observer?.observe(slidevLayout, {
-        attributes: true,
-        attributeFilter: ["style"],
-      });
+      console.debug("[Naive] Found .slidev-layout");
+      observer.disconnect(); // stop observing the document body
+      updateBaseFontSize();
     }
   });
 
-  // Start observing the document body for element appearance
+  // Start observing the document body for layout appearance
   observer.observe(document.body, {
     childList: true,
     subtree: true,
   });
 
-  console.debug(
-    "[Naive] Watching for .slidev-layout element to set base font size",
-  );
+  console.debug("[Naive] Watching for .slidev-layout element to show up");
 
   return fontSize;
 };
