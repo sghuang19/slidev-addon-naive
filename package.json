@@ -18,7 +18,7 @@
     "url": "git+https://github.com/sghuang19/slidev-addon-naive.git"
   },
   "license": "MIT",
-  "author": "Samuel Huang",
+  "author": "Samuel Huang <hi@sghuang.com> (https://sghuang.com)",
   "type": "module",
   "main": "src/index.ts",
   "files": [
