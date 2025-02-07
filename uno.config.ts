@@ -13,7 +13,9 @@ import { defineConfig, presetWind } from "unocss";
 export default defineConfig({
   presets: [
     presetWind({
-      important: ":root", // makes UnoCSS override Naive UI styles
+      // Makes UnoCSS override Naive UI styles. This is needed for some UnoCSS
+      // utility classes to take effect without adding ! prefix
+      important: ":root",
     }),
   ],
 });
