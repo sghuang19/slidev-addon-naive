@@ -1,27 +1,7 @@
-import { ref, computed, type Ref } from "vue";
+import { ref, computed } from "vue";
 import naive, { darkTheme, lightTheme } from "naive-ui";
 
-const useDarkTheme = (): Ref<boolean> => {
-  const isDark = ref(false);
-
-  if (typeof window !== "undefined") {
-    // Initialize with current state
-    isDark.value = document.documentElement.classList.contains("dark");
-
-    // Watch for changes in the 'dark' class
-    const observer = new MutationObserver(() => {
-      isDark.value = document.documentElement.classList.contains("dark");
-    });
-
-    // Start observing the html element for class changes
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
-  }
-
-  return isDark;
-};
+import useDarkTheme from "./useDarkTheme";
 
 export default {
   install(app) {
