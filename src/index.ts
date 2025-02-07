@@ -1,1 +1,1 @@
-export { default } from "./naive.ts";
+export { default } from "./naive";
