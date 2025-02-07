@@ -2,7 +2,7 @@ import { ref, computed, type App } from "vue";
 import { darkTheme, lightTheme } from "naive-ui";
 import { ConfigProviderInjection } from "naive-ui/es/config-provider/src/internal-interface.js";
 
-import useDarkTheme from "./useDarkTheme.ts";
+import isDark from "./useDarkTheme.ts";
 import baseFontSize from "./useBaseFontSizes.ts";
 
 /**
@@ -21,7 +21,6 @@ const themeOverrides = computed(() => ({
 
 const useConfigProvider = (app: App) => {
   // Manually inject n-config-provider context
-  const isDark = useDarkTheme();
   app.provide("n-config-provider", {
     mergedThemeRef: computed(() => (isDark.value ? darkTheme : lightTheme)), // required
     mergedThemeOverridesRef: themeOverrides, // required
