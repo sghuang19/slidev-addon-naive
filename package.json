@@ -28,7 +28,8 @@
     "uno.config.ts"
   ],
   "scripts": {
-    "dev": "slidev"
+    "dev": "slidev",
+    "sort": "bunx sort-package-json"
   },
   "dependencies": {
     "naive-ui": "^2.41.0"
