@@ -1,7 +1,7 @@
 import naive from "naive-ui";
 
-import useConfigProvider from "./useConfigProvider";
-import useInjectStyle from "./useInjectStyle";
+import useConfigProvider from "./useConfigProvider.ts";
+import useInjectStyle from "./useInjectStyle.ts";
 
 export default {
   install(app) {

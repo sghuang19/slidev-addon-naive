@@ -1,7 +1,7 @@
 import { ref, computed } from "vue";
 import { darkTheme, lightTheme } from "naive-ui";
 
-import useDarkTheme from "./useDarkTheme";
+import useDarkTheme from "./useDarkTheme.ts";
 
 const useConfigProvider = (app) => {
   // Manually inject n-config-provider context
