@@ -1,6 +1,6 @@
 {
   "name": "slidev-addon-naive",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "An addon that brings Naive UI components to Slidev.",
   "keywords": [
     "naive-ui",
@@ -20,8 +20,10 @@
   "license": "MIT",
   "author": "Samuel Huang",
   "type": "module",
+  "main": "src/index.ts",
   "files": [
     "setup/main.ts",
+    "src/",
     "slides.md",
     "uno.config.ts"
   ],

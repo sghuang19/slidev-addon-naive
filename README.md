@@ -23,6 +23,8 @@ yarn add slidev-addon-naive
 bun add slidev-addon-naive
 ```
 
+## As a Slidev Addon
+
 Then, enable this addon for your slides using front matter:
 
 <!-- prettier-ignore -->
@@ -46,6 +48,22 @@ Alternatively, you can enable the addon by adding the following property into
   }
 }
 ```
+
+## As a Vue Plugin (Experimental)
+
+Since `v0.7.0`, you can also use this as a Vue plugin. This helps avoid some
+configuration file conflicts.
+
+```ts
+// main/setup.ts
+import naive from "slidev-naive-addon";
+
+export default defineAppSetup(({ app }) => {
+  app.use(naive);
+});
+```
+
+---
 
 You can now seamlessly use Naive UI components in your slides, just as you would
 in any other Vue application! Both `<n-name>` and `<NName>` syntaxes are
@@ -89,6 +107,7 @@ supported, along with full compatibility for props and slots.
 
 ## Latest Changes
 
+- **`v0.7.0`:** Added support for using addon as a Vue plugin.
 - **`v0.6.0`:** Added full support for UnoCSS utility classes. No more `!`
   prefixes needed!
 - **`v0.5.1`:** Improved logic in `main.ts`.
