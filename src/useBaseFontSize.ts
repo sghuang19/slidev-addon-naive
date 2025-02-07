@@ -1,7 +1,6 @@
 import { ref } from "vue";
 
-// TODO: is it possible to use fontSize as a regular var instead of ref?
-
+// must be a ref for Naive components to be rendered with overrides
 const fontSize = ref("16px"); // default font size
 
 const setBaseFontSize = () => {
