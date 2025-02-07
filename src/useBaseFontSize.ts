@@ -16,29 +16,33 @@ const setBaseFontSize = () => {
   }
 };
 
-if (typeof window === "undefined") {
-  console.error(
-    `[Naive] Window is undefined, can't observe DOM to set base font size`,
-  );
-} else {
+const observeSlidevLayout = () => {
   // Setup observer for DOM changes
-  const observer = new MutationObserver(() => {
+  const layoutObserver = new MutationObserver(() => {
     const slidevLayout = document.querySelector(".slidev-layout");
 
     if (slidevLayout) {
       console.debug("[Naive] Found .slidev-layout");
-      observer.disconnect(); // stop observing the document body
+      layoutObserver.disconnect(); // stop observing the document body
       setBaseFontSize();
     }
   });
 
   // Start observing the document body for layout appearance
-  observer.observe(document.body, {
+  layoutObserver.observe(document.body, {
     childList: true,
     subtree: true,
   });
 
   console.debug("[Naive] Watching for .slidev-layout element to show up");
+}
+
+if (typeof window === "undefined") {
+  console.error(
+    `[Naive] Window is undefined, can't observe DOM to set base font size`,
+  );
+} else {
+  observeSlidevLayout();
 }
 
 export default fontSize;
