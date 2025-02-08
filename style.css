@@ -1,0 +1,5 @@
+/* Naive UI overrides */
+
+.n-alert-body__title {
+  font-size: var(--n-font-size-huge) !important;
+}
