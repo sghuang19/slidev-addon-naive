@@ -120,6 +120,16 @@ Tertiary button
 
 ---
 
+## NAlert
+
+<NAlert title="Alert Title" type="info">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+  veniam, quis nostrud exercitation ullamco.
+</NAlert>
+
+---
+
 ## NCard
 
 <div style="display: flex; gap: 25px;">
