@@ -110,7 +110,8 @@ supported, along with full compatibility for props and slots.
 ## Latest Changes
 
 - **`v0.8.2`:** Corrected font size of `<Alert>` title.
-- **`v0.8.1`:** Corrected font size of `<Alert>` title.
+- **`v0.8.1`:** Fixed a bug that causes font size applied by UnoCSS `@apply`
+  directive not taking effect.
 - **`v0.8.0`:** Override Naive UI font size with base font size.
 - **`v0.7.0`:** Added support for using addon as a Vue plugin.
 - **`v0.6.0`:** Added full support for UnoCSS utility classes. No more `!`
