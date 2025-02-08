@@ -8,7 +8,7 @@ const setBaseFontSize = () => {
   if (element) {
     const computedStyle = window.getComputedStyle(element);
     fontSize.value = computedStyle.fontSize;
-    console.debug("[Naive] Base font size updated:", fontSize.value);
+    console.debug("[Naive] Base font size:", fontSize.value);
   } else {
     console.error(
       "[Naive] .slidev-layout not found, using default font size (16px)",
