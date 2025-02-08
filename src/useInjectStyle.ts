@@ -7,6 +7,7 @@ const useInjectStyle = () => {
       meta.name = name;
       head.appendChild(meta);
     });
+    console.debug("[Naive] Styles injected to <head>");
   }
 };
 

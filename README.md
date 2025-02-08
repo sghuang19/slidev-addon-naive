@@ -109,12 +109,13 @@ supported, along with full compatibility for props and slots.
 
 ## Latest Changes
 
+- **`v0.8.0`:** Override Naive UI font size with base font size.
 - **`v0.7.0`:** Added support for using addon as a Vue plugin.
 - **`v0.6.0`:** Added full support for UnoCSS utility classes. No more `!`
   prefixes needed!
 - **`v0.5.1`:** Improved logic in `main.ts`.
 - **`v0.5.0`:** Added support for dynamic dark theme.
-- **`v0.4.0:`** Fixed a bug that caused Naive UI styles not loaded.
-- **`v0,3.0:`** Adopted a new way of loading components.
-- **`v0.2.0:`** Added all components.
-- **`v0.1.0:`** First working version with a few components.
+- **`v0.4.0`:** Fixed a bug that caused Naive UI styles not loaded.
+- **`v0,3.0`:** Adopted a new way of loading components.
+- **`v0.2.0`:** Added all components.
+- **`v0.1.0`:** First working version with a few components.
