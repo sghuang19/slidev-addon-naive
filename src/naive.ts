@@ -5,6 +5,8 @@ import naive from "naive-ui";
 import useConfigProvider from "./useConfigProvider.ts";
 import useInjectStyle from "./useInjectStyle.ts";
 
+import "../style.css";
+
 export default {
   install(app: App) {
     app.use(naive); // setup Naive UI
