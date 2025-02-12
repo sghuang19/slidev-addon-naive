@@ -6,8 +6,16 @@ import ts from "typescript-eslint";
 import vue from "eslint-plugin-vue";
 
 const config = [
-  { files: ["**/*.{js,mjs,cjs,ts,vue}"] },
-  { languageOptions: { globals: globals.browser } },
+  {
+    files: ["**/*.ts"],
+    languageOptions: {
+      globals: globals.browser,
+      parserOptions: {
+        // required for type-checking rules
+        project: true, // uses tsconfig.json
+      },
+    },
+  },
   js.configs.recommended,
   // @ts-expect-error TSEslint config type not compatible yet
   ...ts.configs.recommendedTypeChecked,
