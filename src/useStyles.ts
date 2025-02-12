@@ -3,6 +3,7 @@ import { computed, watch } from "vue";
 import baseFontSize from "./useBaseFontSize.ts";
 import { deriveSize } from "./utils.ts";
 
+// see https://naiveui.com/en-US/os-theme/docs/theme#use-theme-vars
 const fontSizeMultipliers = {
   tiny: 0.75,
   small: 0.875,
