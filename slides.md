@@ -1,8 +1,3 @@
----
-addons:
-  - naive
----
-
 # Preview
 
 ---

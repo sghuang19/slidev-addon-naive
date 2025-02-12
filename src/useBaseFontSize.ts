@@ -3,49 +3,13 @@ import { ref } from "vue";
 // must be a ref for Naive components to be rendered with overrides
 const fontSize = ref("16px"); // default font size
 
-const setDesignTokens = () => {
-  const match = fontSize.value.match(/^(\d+(?:\.\d+)?)(px|rem|em)$/);
-  if (!match) {
-    console.error("[Naive] Invalid font size format:", fontSize.value);
-    return;
-  }
-
-  const baseSize = parseFloat(match[1]);
-  const unit = match[2];
-
-  // Calculate relative sizes
-  document.documentElement.style.setProperty(
-    "--n-font-size-tiny",
-    `${baseSize * 0.75}${unit}`,
-  );
-  document.documentElement.style.setProperty(
-    "--n-font-size-small",
-    `${baseSize * 0.875}${unit}`,
-  );
-  document.documentElement.style.setProperty(
-    "--n-font-size",
-    `${baseSize}${unit}`,
-  );
-  document.documentElement.style.setProperty(
-    "--n-font-size-medium",
-    `${baseSize}${unit}`,
-  );
-  document.documentElement.style.setProperty(
-    "--n-font-size-large",
-    `${baseSize * 1.125}${unit}`,
-  );
-  document.documentElement.style.setProperty(
-    "--n-font-size-huge",
-    `${baseSize * 1.25}${unit}`,
-  );
-};
+export default fontSize; // must be exported early for other modules to use
 
 const setBaseFontSize = () => {
   const element = document.querySelector(".slidev-layout");
   if (element) {
     const computedStyle = window.getComputedStyle(element);
     fontSize.value = computedStyle.fontSize;
-    setDesignTokens();
     console.debug("[Naive] Base font size updated:", fontSize.value);
   } else {
     console.error(
@@ -99,5 +63,3 @@ if (typeof window === "undefined") {
 } else {
   observeBaseFontSize();
 }
-
-export default fontSize;
