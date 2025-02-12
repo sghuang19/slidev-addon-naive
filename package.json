@@ -29,6 +29,8 @@
   ],
   "scripts": {
     "dev": "slidev",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
     "sort": "bunx sort-package-json"
   },
   "dependencies": {
