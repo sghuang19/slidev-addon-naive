@@ -3,7 +3,7 @@ import { darkTheme, lightTheme } from "naive-ui";
 import { ConfigProviderInjection } from "naive-ui/es/config-provider/src/internal-interface.js";
 
 import isDark from "./useDarkTheme.ts";
-import baseFontSize from "./useBaseFontSize.ts";
+import { themeOverrides } from "./useStyles.ts";
 
 /**
  * I'm trying to mimic the design of original Naive UI, which can be found by
@@ -11,13 +11,6 @@ import baseFontSize from "./useBaseFontSize.ts";
  *
  * https://www.naiveui.com/en-US/docs/theme
  */
-
-const themeOverrides = computed(() => ({
-  common: {
-    fontSize: baseFontSize.value, // regular text - 16px
-    fontSizeMedium: baseFontSize.value, // default buttons - 16px
-  },
-}));
 
 const useConfigProvider = (app: App) => {
   // Manually inject n-config-provider context

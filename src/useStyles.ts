@@ -1,4 +1,4 @@
-import { watch } from "vue";
+import { computed, watch } from "vue";
 
 import baseFontSize from "./useBaseFontSize.ts";
 import { deriveSize } from "./utils.ts";
@@ -12,11 +12,23 @@ const fontSizeMultipliers = {
   huge: 1.25,
 };
 
+/** Theme overrides injected to Naive context */
+export const themeOverrides = computed(() => {
+  const derivedFontSizes = Object.fromEntries(
+    Object.entries(fontSizeMultipliers).map(([variant, multiplier]) => [
+      `fontSize${variant === "default" ? "" : variant[0].toUpperCase() + variant.slice(1)}`,
+      deriveSize(baseFontSize.value, multiplier),
+    ]),
+  );
+
+  return { common: derivedFontSizes };
+});
+
 const setStyles = () => {
   // set font size variants
   Object.entries(fontSizeMultipliers).forEach(([variant, multiplier]) => {
     document.documentElement.style.setProperty(
-      variant === "default" ? "--n-font-size" : `--n-font-size-${variant}`,
+      `--n-font-size${variant === "default" ? "" : `-${variant}`}`,
       deriveSize(baseFontSize.value, multiplier),
     );
   });
