@@ -1,18 +1,9 @@
-import { ref, watch } from "vue";
-import setStyles from "./setStyles.ts";
+import { ref } from "vue";
 
 // must be a ref for Naive components to be rendered with overrides
 const fontSize = ref("16px"); // default font size
 
 export default fontSize; // must be exported early for other modules to use
-
-watch(
-  fontSize,
-  () => {
-    setStyles();
-  },
-  { immediate: true },
-);
 
 const setBaseFontSize = () => {
   const element = document.querySelector(".slidev-layout");
