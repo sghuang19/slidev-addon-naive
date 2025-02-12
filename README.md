@@ -49,7 +49,7 @@ Alternatively, you can enable the addon by adding the following property into
 }
 ```
 
-## As a Vue Plugin (Experimental)
+## As a Vue Plugin (Recommended)
 
 Since `v0.7.0`, you can also use this as a Vue plugin. This helps avoid some
 configuration file conflicts.
