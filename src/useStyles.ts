@@ -21,6 +21,8 @@ export const themeOverrides = computed(() => {
     ]),
   );
 
+  console.debug("[Naive] Derived font sizes:", derivedFontSizes);
+
   return { common: derivedFontSizes };
 });
 
