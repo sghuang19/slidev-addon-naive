@@ -1,3 +1,9 @@
+---
+# not needed in addon dev dir or in Vue plugin mode
+# addons:
+#  - naive
+---
+
 # Preview
 
 ---
