@@ -10,12 +10,6 @@
 
 import { defineConfig, presetWind } from "unocss";
 
-export default defineConfig({
-  presets: [
-    presetWind({
-      // Makes UnoCSS override Naive UI styles. This is needed for some UnoCSS
-      // utility classes to take effect without adding ! prefix
-      important: ":root",
-    }),
-  ],
-});
+// Makes UnoCSS override Naive UI styles. This is needed for some UnoCSS
+// utility classes to take effect without adding ! prefix
+export default defineConfig({ presets: [presetWind({ important: true })] });
