@@ -104,8 +104,10 @@ supported, along with full compatibility for props and slots.
   TypeScript such as [Bun](https://bun.sh) or
   [Node since `v22.6.0`](https://nodejs.org/en/learn/typescript/run-natively).
 - The `uno.config.ts` file in your project will be **overridden** by this addon.
-  If your slides rely on the configurations in that file, consider using this
-  addon as a [Vue Plugin](#as-a-vue-plugin-experimental) (requires `v0.7.0`).
+  Any styles specified in `style.css` with `@apply` directives are also
+  suppressed for unknown reasons. If your slides rely on these configurations,
+  consider using this addon as a [Vue Plugin](#as-a-vue-plugin-experimental)
+  (requires `v0.7.0`).
 
 ## Latest Changes
 
