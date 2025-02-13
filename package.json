@@ -22,9 +22,10 @@
   "type": "module",
   "main": "src/index.ts",
   "files": [
-    "setup/main.ts",
+    "setup/",
     "src/",
     "slides.md",
+    "style.css",
     "uno.config.ts"
   ],
   "scripts": {
