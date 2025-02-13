@@ -1,4 +1,5 @@
 import { ref, computed, type App } from "vue";
+
 import { darkTheme, lightTheme } from "naive-ui";
 import { ConfigProviderInjection } from "naive-ui/es/config-provider/src/internal-interface.js";
 

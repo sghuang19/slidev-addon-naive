@@ -1,9 +1,8 @@
-import type { Linter } from "eslint";
-
-import globals from "globals";
 import js from "@eslint/js";
-import ts from "typescript-eslint";
+import type { Linter } from "eslint";
 import vue from "eslint-plugin-vue";
+import globals from "globals";
+import ts from "typescript-eslint";
 
 const config = [
   {
