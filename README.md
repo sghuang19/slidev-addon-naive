@@ -49,7 +49,7 @@ Alternatively, you can enable the addon by adding the following property into
 }
 ```
 
-## As a Vue Plugin (Experimental)
+## As a Vue Plugin (Recommended)
 
 Since `v0.7.0`, you can also use this as a Vue plugin. This helps avoid some
 configuration file conflicts.
@@ -103,17 +103,17 @@ supported, along with full compatibility for props and slots.
 - No JavaScript support yet. Please use runtime that natively supports
   TypeScript such as [Bun](https://bun.sh) or
   [Node since `v22.6.0`](https://nodejs.org/en/learn/typescript/run-natively).
-- The `uno.config.ts` file in your project will be **overridden** by this addon.
-  Any styles specified in `style.css` with `@apply` directives are also
-  suppressed for unknown reasons. If your slides rely on these configurations,
-  consider using this addon as a [Vue Plugin](#as-a-vue-plugin-experimental)
-  (requires `v0.7.0`).
+- If you found your local configs are not taking effect (e.g. `style.css`,
+  `uno.config.ts`), try using this addon as a
+  [Vue Plugin](#as-a-vue-plugin-experimental) instead (requires `v0.7.0`).
 
 ## Latest Changes
 
+- **`v0.8.3`:** Fixed a bug where `@apply` directives in local CSS files were
+  not being applied correctly.
 - **`v0.8.2`:** Corrected font size of `<Alert>` title.
-- **`v0.8.1`:** Fixed a bug that causes font size applied by UnoCSS `@apply`
-  directive not taking effect.
+- **`v0.8.1`:** Fixed a bug where font sizes applied by UnoCSS `@apply`
+  directives were not taking effect.
 - **`v0.8.0`:** Override Naive UI font size with base font size.
 - **`v0.7.0`:** Added support for using addon as a Vue plugin.
 - **`v0.6.0`:** Added full support for UnoCSS utility classes. No more `!`
