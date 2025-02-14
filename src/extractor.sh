@@ -1,4 +1,4 @@
-SLIDES_PATH=${1:-"slides.md"}
+FILE_PATH=${1:-"slides.md"}
 
 # 1. Extract open tags of Naive UI components (starting with N and followed by
 #    an uppercase letter)
