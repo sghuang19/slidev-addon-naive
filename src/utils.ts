@@ -23,3 +23,13 @@ export const deriveSize = (size: string, multiplier: number): string => {
       : Math.round(value * multiplier * 100) / 100 // round to 2 decimal places for rem | em
   }${unit}`;
 };
+
+export const getMultiplier = (baseSize: string, targetSize: string): number => {
+  const parsedBaseSize = parseSize(baseSize);
+  const parsedTargetSize = parseSize(targetSize);
+  if (!parsedBaseSize || !parsedTargetSize) {
+    console.error(`[Naive] Fall back to multiplier = 1`);
+    return 1;
+  }
+  return parsedTargetSize.value / parsedBaseSize.value;
+};
