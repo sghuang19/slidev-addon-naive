@@ -30,6 +30,8 @@
   ],
   "scripts": {
     "dev": "slidev",
+    "format": "prettier -c .",
+    "format:write": "prettier -w .",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "sort": "bunx sort-package-json"
@@ -42,6 +44,7 @@
     "@slidev/cli": "^51.1.0",
     "@slidev/theme-default": "^0.25.0",
     "@slidev/types": "^51.1.0",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "eslint": "^9.20.1",
     "eslint-plugin-vue": "^9.32.0",
     "globals": "^15.14.0",

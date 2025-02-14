@@ -7,7 +7,6 @@
  * However, the "important" option is only available in presetWind
  *
  */
-
 import { defineConfig, presetWind } from "unocss";
 
 // Makes UnoCSS override Naive UI styles. This is needed for some UnoCSS
