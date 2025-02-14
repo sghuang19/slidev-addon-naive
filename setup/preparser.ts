@@ -12,9 +12,9 @@ const extractComponents = (filepath: string): string[] => {
   const extractorPath = join(__dirname, "../src/extractor.sh");
 
   try {
-    execSync(`chmod +x ${extractorPath}`);
     const output = execSync(`"${extractorPath}" "${filepath}"`, {
       encoding: "utf-8",
+      shell: process.platform === "win32" ? "powershell.exe" : undefined,
     });
 
     const result = output.trim().split("\n");
