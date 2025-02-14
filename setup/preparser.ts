@@ -24,10 +24,27 @@ const extractComponents = (filepath: string): string[] => {
 
     return result;
   } catch (error) {
+    if (!(error instanceof Error)) {
+      console.error(
+        red(
+          `  [Naive] Failed to extract components due to unknown error: \
+          ${String(error)}`,
+        ),
+      );
+      return [];
+    }
+
+    if (error.name === "EACCES") {
+      console.error(
+        red(
+          "  [Naive] Failed to extract Naive UI components due to permission \
+          denied. Make sure the post-install script is executed.",
+        ),
+      );
+    }
+
     console.error(
-      red(
-        `  [Naive] Failed to extract Naive UI components: ${(error as Error).message}`,
-      ),
+      red(`  [Naive] Failed to extract Naive UI components: ${error.message}`),
     );
     return [];
   }
