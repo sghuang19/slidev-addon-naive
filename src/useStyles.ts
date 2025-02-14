@@ -2,6 +2,7 @@ import { type ComputedRef, computed, watch } from "vue";
 
 import baseFontSize from "./useBaseFontSize.ts";
 import { deriveSize, getMultiplier } from "./utils.ts";
+import { GlobalThemeOverrides } from "naive-ui";
 
 const multiplier: ComputedRef<number> = computed(() =>
   getMultiplier("14px", baseFontSize.value),
@@ -19,18 +20,20 @@ const DEFAULT_FONT_SIZES = {
 } as const;
 
 /** Theme overrides injected to Naive context */
-export const themeOverrides = computed(() => {
-  const derivedFontSizes = Object.fromEntries(
-    Object.entries(DEFAULT_FONT_SIZES).map(([variant, size]) => [
-      `fontSize${variant}`,
-      deriveSize(size, multiplier.value),
-    ]),
-  );
+export const themeOverrides: ComputedRef<GlobalThemeOverrides> = computed(
+  () => {
+    const derivedFontSizes = Object.fromEntries(
+      Object.entries(DEFAULT_FONT_SIZES).map(([variant, size]) => [
+        `fontSize${variant}`,
+        deriveSize(size, multiplier.value),
+      ]),
+    );
 
-  console.debug("[Naive] Derived font sizes:", derivedFontSizes);
+    console.debug("[Naive] Derived font sizes:", derivedFontSizes);
 
-  return { common: derivedFontSizes };
-});
+    return { common: derivedFontSizes };
+  },
+);
 
 const setStyles = () => {
   // set font size variants
@@ -44,5 +47,5 @@ const setStyles = () => {
 
 export default function useStyles() {
   setStyles(); // set initial styles immediately
-  watch(baseFontSize, setStyles);
+  watch(multiplier, setStyles);
 }
