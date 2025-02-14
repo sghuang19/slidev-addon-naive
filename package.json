@@ -51,6 +51,9 @@
     "prettier": "^3.5.0",
     "typescript-eslint": "^8.24.0"
   },
+  "peerDependencies": {
+    "@slidev/types": "*"
+  },
   "engines": {
     "bun": ">=1.0.0",
     "node": ">=22.6.0"
