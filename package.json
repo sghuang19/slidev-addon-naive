@@ -24,6 +24,7 @@
   "files": [
     "setup/",
     "src/",
+    "scripts/postinstall.sh",
     "slides.md",
     "style.css",
     "uno.config.ts"
@@ -33,6 +34,7 @@
     "dev": "slidev",
     "format": "prettier -c .",
     "format:write": "prettier -w .",
+    "postinstall": "./scripts/postinstall.sh",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "preview": "vite preview",
