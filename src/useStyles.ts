@@ -5,9 +5,11 @@ import { type GlobalThemeOverrides } from "naive-ui";
 import baseFontSize from "./useBaseFontSize.ts";
 import { deriveSize, getMultiplier } from "./utils.ts";
 
-const multiplier: ComputedRef<number> = computed(() =>
-  getMultiplier("14px", baseFontSize.value),
-);
+const multiplier: ComputedRef<number> = computed(() => {
+  const newVal = getMultiplier("14px", baseFontSize.value);
+  console.debug(`[Naive] Multiplier set to ${newVal}`);
+  return newVal;
+});
 
 // see https://naiveui.com/en-US/os-theme/docs/theme#use-theme-vars
 const DEFAULT_FONT_SIZES = {
@@ -45,6 +47,18 @@ const setStyles = () => {
       deriveSize(size, multiplier.value),
     );
   });
+
+  // set icon size
+  const iconSize = deriveSize("24px", multiplier.value);
+  document.documentElement.style.setProperty(
+    "--n-icon-size",
+    `${iconSize} !important`,
+  );
+
+  // also needed since Alert has inline styles
+  const style = document.createElement("style");
+  style.textContent = `.n-alert { --n-icon-size: ${iconSize} !important; }`;
+  document.head.appendChild(style);
 };
 
 const useStyles = () => {
