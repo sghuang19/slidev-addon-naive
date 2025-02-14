@@ -1,7 +1,7 @@
 {
   "proseWrap": "always",
   "plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-sh"],
-  "importOrder": ["^vue", "^@slidev", "^naive-ui", "^[^.]", "^[./]"],
+  "importOrder": ["^node", "^vue", "^@slidev", "^naive-ui", "^[^.]", "^[./]"],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
   "overrides": [

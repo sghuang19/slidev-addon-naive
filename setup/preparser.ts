@@ -1,10 +1,10 @@
-// see https://sli.dev/custom/config-parser
-import { definePreparserSetup } from "@slidev/types";
-
-import { green, red } from "kolorist";
 import { execSync } from "node:child_process";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+
+import { definePreparserSetup } from "@slidev/types";
+
+import { green, red } from "kolorist";
 
 const extractComponents = (filepath: string): string[] => {
   const __filename = fileURLToPath(import.meta.url);
@@ -33,6 +33,7 @@ const extractComponents = (filepath: string): string[] => {
   }
 };
 
+// see https://sli.dev/custom/config-parser
 export default definePreparserSetup(({ filepath }) => {
   extractComponents(filepath);
   return []; // do nothing
