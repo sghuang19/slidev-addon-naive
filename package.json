@@ -50,6 +50,7 @@
     "eslint": "^9.20.1",
     "eslint-plugin-vue": "^9.32.0",
     "globals": "^15.14.0",
+    "kolorist": "^1.8.0",
     "prettier": "^3.5.0",
     "prettier-plugin-sh": "^0.14.0",
     "prettier-plugin-slidev": "^1.0.5",
