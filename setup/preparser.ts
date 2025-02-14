@@ -2,6 +2,8 @@ import { execSync } from "node:child_process";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { ref } from "vue";
+
 import { definePreparserSetup } from "@slidev/types";
 
 import { green, red } from "kolorist";
@@ -50,8 +52,10 @@ const extractComponents = (filepath: string): string[] => {
   }
 };
 
+export const components = ref<string[]>([]);
+
 // see https://sli.dev/custom/config-parser
 export default definePreparserSetup(({ filepath }) => {
-  extractComponents(filepath);
+  components.value = extractComponents(filepath);
   return []; // do nothing
 });
