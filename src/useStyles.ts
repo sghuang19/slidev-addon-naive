@@ -36,6 +36,7 @@ export const themeOverrides: ComputedRef<GlobalThemeOverrides> = computed(
   },
 );
 
+/** Styles set directly in DOM */
 const setStyles = () => {
   // set font size variants
   Object.entries(DEFAULT_FONT_SIZES).forEach(([variant, size]) => {
@@ -46,7 +47,9 @@ const setStyles = () => {
   });
 };
 
-export default function useStyles() {
+const useStyles = () => {
   setStyles(); // set initial styles immediately
   watch(multiplier, setStyles);
-}
+};
+
+export default useStyles;
