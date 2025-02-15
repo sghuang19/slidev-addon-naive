@@ -3,6 +3,9 @@
 # addons:
 #  - naive
 transition: fade
+fonts:
+  sans: ml, Robot
+  mono: ml, Fira Code
 ---
 
 # `slidev-addon-naive`
@@ -169,11 +172,12 @@ Tertiary button
 ```markdown
 <NProgress type="circle" status="info" :percentage="49" />
 <NProgress
-  type="line" status="success" :percentage="30" indicator-placement="inside"
+  type="line" status="success" :percentage="30"
+  indicator-placement="inside"
 />
 ```
 
-<NSpace flex justify-center mt-10>
+<NSpace flex justify-center mt-4>
   <NProgress type="circle" :percentage="19" />
   <NProgress type="circle" status="info" :percentage="49" />
   <NProgress type="circle" status="success" :percentage="10" />
@@ -181,7 +185,7 @@ Tertiary button
   <NProgress type="circle" status="error" :percentage="95" />
 </NSpace>
 
-<NSpace vertical mt-10 gap-10>
+<NSpace vertical mt-8 gap-8>
   <NProgress type="line" :percentage="95" :show-indicator="false" />
   <NProgress type="line" status="error" :percentage="65" />
   <NProgress
@@ -199,8 +203,7 @@ Tertiary button
       <img src="https://picsum.photos/400/200" alt="cover">
     </template>
     Lorem ipsum dolor sit amet veniam nostrud magna dolore veniam pariatur. Dolor
-    incididunt duis ipsum sit cupidatat. Elit qui aliquip anim minim laborum duis
-    ea ut elit in eiusmod cillum eu proident commodo reprehenderit nisi commodo.
+    incididunt duis ipsum sit cupidatat.
   </NCard>
   <NCard title="Card Slots Demo">
     <template #header-extra>
