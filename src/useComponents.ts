@@ -1,15 +1,10 @@
 import { type App } from "vue";
 
-import { components } from "virtual:naive-components";
-
-declare module "virtual:naive-components" {
-  export const components: string[];
-}
+import components from "virtual:naive";
 
 console.error(components);
 
 // FIXME: typecheck to make sure component exists
-// FIXME: importing components will attempt to run node only code on browser
 
 const useComponents = async (app: App) => {
   if (import.meta.env.DEV) {
