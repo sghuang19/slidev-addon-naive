@@ -105,10 +105,11 @@ supported, along with full compatibility for props and slots.
   [Node since `v22.6.0`](https://nodejs.org/en/learn/typescript/run-natively).
 - If you found your local configs are not taking effect (e.g. `style.css`,
   `uno.config.ts`), try using this addon as a
-  [Vue Plugin](#as-a-vue-plugin-experimental) instead (requires `v0.7.0`).
+  [Vue Plugin](#as-a-vue-plugin-recommended) instead (requires `v0.7.0`).
 
 ## Latest Changes
 
+- **`v0.8.4`:** Added support for dynamic icon size in `<Alert>`.
 - **`v0.8.3`:** Fixed a bug where `@apply` directives in local CSS files were
   not being applied correctly.
 - **`v0.8.2`:** Corrected font size of `<Alert>` title.
