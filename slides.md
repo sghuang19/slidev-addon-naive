@@ -164,6 +164,30 @@ Tertiary button
 
 ---
 
+## `NProgress`
+
+```markdown
+<NProgress type="circle" status="info" :percentage="49" />
+```
+
+<NSpace flex justify-center mt-10>
+  <NProgress type="circle" :percentage="19" />
+  <NProgress type="circle" status="info" :percentage="49" />
+  <NProgress type="circle" status="success" :percentage="10" />
+  <NProgress type="circle" status="warning" :percentage="74" />
+  <NProgress type="circle" status="error" :percentage="95" />
+</NSpace>
+
+<NSpace vertical mt-10 gap-10>
+  <NProgress type="line" :percentage="95" :show-indicator="false" />
+  <NProgress type="line" status="error" :percentage="65" />
+  <NProgress
+    type="line" status="success" :percentage="30" indicator-placement="inside"
+  />
+</NSpace>
+
+---
+
 ## `NCard`
 
 <div style="display: flex; gap: 25px;">
