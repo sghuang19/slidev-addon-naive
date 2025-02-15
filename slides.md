@@ -4,7 +4,29 @@
 #  - naive
 ---
 
-# Preview
+# `slidev-addon-naive`
+
+<div>
+  A <NButton strong type="info" tag="a" href="https://sli.dev"> Slidev
+  </NButton> addon that brings <NButton strong type="primary" tag="a"
+  href="https://naiveui.com"> Naive UI </NButton> components to your slide show.
+</div>
+
+- Author: [Samuel Huang](https://sghuang.com)
+- NPM:
+  [npmjs.com/package/slidev-addon-naive](https://npmjs.com/package/slidev-addon-naive)
+- Repository:
+  [github.com/sghuang19/slidev-addon-naive](https://github.com/sghuang19/slidev-addon-naive)
+- Preview: [naive.sghuang.com](https://naive.sghuang.com)
+
+<div class="flex justify-center gap-24">
+  <NImage class=""
+     width="250" src="https://sli.dev/logo-title.png"
+  />
+  <NImage class="pb-15"
+     width="125" src="https://www.naiveui.com/assets/naivelogo-BdDVTUmz.svg"
+  />
+</div>
 
 ---
 
