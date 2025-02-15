@@ -3,5 +3,14 @@
   "plugins": ["@trivago/prettier-plugin-sort-imports"],
   "importOrder": ["^vue", "^@slidev", "^naive-ui", "^[^.]", "^[./]"],
   "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true
+  "importOrderSortSpecifiers": true,
+  "overrides": [
+    {
+      "files": ["slides.md"],
+      "options": {
+        "parser": "slidev",
+        "plugins": ["prettier-plugin-slidev"]
+      }
+    }
+  ]
 }

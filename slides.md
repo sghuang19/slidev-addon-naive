@@ -2,13 +2,50 @@
 # not needed in addon dev dir or in Vue plugin mode
 # addons:
 #  - naive
+transition: fade
+fonts:
+  sans: ml, Robot
+  mono: ml, Fira Code
 ---
 
-# Preview
+# `slidev-addon-naive`
+
+<div>
+  A <NButton strong type="info"> Slidev </NButton> addon that brings <NButton
+  strong type="primary" > Naive UI </NButton> components to your slide show.
+</div>
+
+- Author: [Samuel Huang](https://sghuang.com)
+- NPM:
+  [npmjs.com/package/slidev-addon-naive](https://npmjs.com/package/slidev-addon-naive)
+- Repository:
+  [github.com/sghuang19/slidev-addon-naive](https://github.com/sghuang19/slidev-addon-naive)
+- Preview: [naive.sghuang.com](https://naive.sghuang.com)
+
+<div flex justify-center items-center>
+  <p shrink class="-translate-y-8">
+    This slideshow demonstrates a few components from Naive UI. For a full demo
+    of all supported components, please visit <a
+    href="https://naiveui.com">naiveui.com</a>.
+  </p>
+
+  <div flex justify-center gap-8 shrink-0>
+    <NImage class=""
+      width="250" src="https://sli.dev/logo-title.png"
+    />
+    <NImage class="pb-15"
+      width="125" src="https://www.naiveui.com/assets/naivelogo-BdDVTUmz.svg"
+    />
+  </div>
+</div>
 
 ---
 
-## NButton
+## `NButton`
+
+```markdown
+<NButton strong secondary type="primary"> A Button </NButton>
+```
 
 Basic
 
@@ -121,9 +158,15 @@ Tertiary button
 
 ---
 
-## NAlert
+## `NAlert`
 
+```markdown
 <NAlert title="Alert Title" type="info">
+  Alert Content
+</NAlert>
+```
+
+<NAlert title="Alert Title" type="info" mt-10>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
   veniam, quis nostrud exercitation ullamco.
@@ -131,16 +174,43 @@ Tertiary button
 
 ---
 
-## NCard
+## `NProgress`
 
-<div style="display: flex; gap: 25px;">
+```markdown
+<NProgress type="circle" status="info" :percentage="49" />
+<NProgress
+  type="line" status="success" :percentage="30"
+  indicator-placement="inside"
+/>
+```
+
+<NSpace flex justify-center mt-4>
+  <NProgress type="circle" :percentage="19" />
+  <NProgress type="circle" status="info" :percentage="49" />
+  <NProgress type="circle" status="success" :percentage="10" />
+  <NProgress type="circle" status="warning" :percentage="74" />
+  <NProgress type="circle" status="error" :percentage="95" />
+</NSpace>
+
+<NSpace vertical mt-8 gap-8>
+  <NProgress type="line" :percentage="95" :show-indicator="false" />
+  <NProgress type="line" status="error" :percentage="65" />
+  <NProgress
+    type="line" status="success" :percentage="30" indicator-placement="inside"
+  />
+</NSpace>
+
+---
+
+## `NCard`
+
+<div flex gap-10>
   <NCard title="Card with Cover">
     <template #cover>
       <img src="https://picsum.photos/400/200" alt="cover">
     </template>
     Lorem ipsum dolor sit amet veniam nostrud magna dolore veniam pariatur. Dolor
-    incididunt duis ipsum sit cupidatat. Elit qui aliquip anim minim laborum duis
-    ea ut elit in eiusmod cillum eu proident commodo reprehenderit nisi commodo.
+    incididunt duis ipsum sit cupidatat.
   </NCard>
   <NCard title="Card Slots Demo">
     <template #header-extra>
@@ -158,54 +228,55 @@ Tertiary button
 
 ---
 
-## NList
+## `NList`
 
-<n-list hoverable clickable>
-  <n-list-item>
-    <n-thing title="Better Late Than Never" content-style="margin-top: 10px;">
+<NList hoverable clickable mt-5>
+  <NListItem>
+    <NThing title="Better Late Than Never" content-style="margin-top: 10px;">
       <template #description>
-        <n-space size="small" style="margin-top: 4px">
-          <n-tag :bordered="false" type="info" size="small">
+        <NSpace size="small" style="margin-top: 4px">
+          <NTag :bordered="false" type="info" size="small">
             Tag A
-          </n-tag>
-          <n-tag :bordered="false" type="info" size="small">
+          </NTag>
+          <NTag :bordered="false" type="info" size="small">
             Tag B
-          </n-tag>
-        </n-space>
+          </NTag>
+        </NSpace>
       </template>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco.
-    </n-thing>
-  </n-list-item>
-  <n-list-item>
-    <n-thing title="Lorem Ipsum" content-style="margin-top: 10px;">
+    </NThing>
+  </NListItem>
+  <NListItem>
+    <NThing title="Lorem Ipsum" content-style="margin-top: 10px;">
       <template #description>
-        <n-space size="small" style="margin-top: 4px">
-          <n-tag :bordered="false" type="info" size="small">
+        <NSpace size="small" style="margin-top: 4px">
+          <NTag :bordered="false" type="info" size="small">
             Tag C
-          </n-tag>
-          <n-tag :bordered="false" type="info" size="small">
+          </NTag>
+          <NTag :bordered="false" type="info" size="small">
             Tag D
-          </n-tag>
-        </n-space>
+          </NTag>
+        </NSpace>
       </template>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco.
-    </n-thing>
-  </n-list-item>
-</n-list>
+    </NThing>
+  </NListItem>
+</NList>
 
 ---
 
-## NMarquee
+## `NMarquee`
 
-<n-marquee auto-fill>
-  <n-image
-    width="80"
-    height="80"
-    src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg"
-    style="margin-right: 24px"
-  />
-</n-marquee>
+```markdown
+<NMarquee auto-fill>
+  <NImage width="200" src="https://sli.dev/logo-title.png" />
+</NMarquee>
+```
+
+<NMarquee auto-fill>
+  <NImage width="200" src="https://sli.dev/logo-title.png" />
+</NMarquee>
