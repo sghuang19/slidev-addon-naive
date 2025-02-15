@@ -1,11 +1,13 @@
 // vite.config.ts
+import { readFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+
 import { defineConfig } from "vite";
 import type { Plugin } from "vite";
 
-import { components } from "./setup/preparser.ts";
-
 const naive = (): Plugin => {
-  const virtualModuleId = "virtual:naive-components";
+  const virtualModuleId = "virtual:naive";
   const resolvedVirtualModuleId = "\0" + virtualModuleId;
 
   return {
@@ -15,10 +17,13 @@ const naive = (): Plugin => {
         return resolvedVirtualModuleId;
       }
     },
-    async load(id) {
+    load(id) {
       if (id === resolvedVirtualModuleId) {
-        // FIXME: virtual modules works, but this line is run before value is set
-        return `export const components = ${JSON.stringify(await components)}`;
+        const components = readFileSync(
+          join(tmpdir(), "slidev-addon-naive.json"),
+          "utf-8",
+        );
+        return `const components = ${components}; export default components;`;
       }
     },
   };
