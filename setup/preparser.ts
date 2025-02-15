@@ -2,7 +2,7 @@ import { execSync } from "node:child_process";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { type Ref, ref } from "vue";
+import { ref } from "vue";
 
 import { definePreparserSetup } from "@slidev/types";
 
@@ -52,12 +52,12 @@ const extractComponents = (filepath: string): string[] => {
   }
 };
 
-export let components: Ref<string[]> | undefined;
+export let components = ref<string[]>([]);
 
 // FIXME: preparser is only executed when used as a Slidev addon
 
 // see https://sli.dev/custom/config-parser
 export default definePreparserSetup(({ filepath }) => {
-  components = ref(extractComponents(filepath));
+  components = ref<string[]>(extractComponents(filepath));
   return []; // do nothing
 });

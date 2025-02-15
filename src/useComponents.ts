@@ -1,22 +1,27 @@
 import { type App } from "vue";
 
-import { components } from "../setup/preparser.ts";
+import { components } from "virtual:naive-components";
+
+declare module "virtual:naive-components" {
+  export const components: string[];
+}
+
+console.error(components);
 
 // FIXME: typecheck to make sure component exists
 // FIXME: importing components will attempt to run node only code on browser
 
 const useComponents = async (app: App) => {
-  if (components) {
-    const module = await import("naive-ui");
-    components.value.forEach((name) => {
-      app.component(name, module[name]);
-    });
-  } else {
-    // lazy import
-    console.info("[Naive] Loading all components without tree-shaking");
-    const { default: naive } = await import("naive-ui");
-    app.use(naive); // register all components without tree-shaking
+  if (import.meta.env.DEV) {
+    // no-need for tree-shaking in dev environment or when extraction failed
+    app.use((await import("naive-ui")).default);
+    return;
   }
+  // register components extracted
+  const naive = await import("naive-ui");
+  components.forEach((name) => {
+    app.component(name, naive[name]);
+  });
 };
 
 export default useComponents;
