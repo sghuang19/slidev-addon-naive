@@ -2,6 +2,7 @@
 # not needed in addon dev dir or in Vue plugin mode
 # addons:
 #  - naive
+transition: fade
 ---
 
 # `slidev-addon-naive`
@@ -30,7 +31,11 @@
 
 ---
 
-## NButton
+## `NButton`
+
+```markdown
+<NButton strong secondary type="primary"> A Button </NButton>
+```
 
 Basic
 
@@ -143,9 +148,15 @@ Tertiary button
 
 ---
 
-## NAlert
+## `NAlert`
 
+```markdown
 <NAlert title="Alert Title" type="info">
+  Alert Content
+</NAlert>
+```
+
+<NAlert title="Alert Title" type="info" class="mt-10">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
   veniam, quis nostrud exercitation ullamco.
@@ -153,7 +164,7 @@ Tertiary button
 
 ---
 
-## NCard
+## `NCard`
 
 <div style="display: flex; gap: 25px;">
   <NCard title="Card with Cover">
@@ -180,54 +191,61 @@ Tertiary button
 
 ---
 
-## NList
+## `NList`
 
-<n-list hoverable clickable>
-  <n-list-item>
-    <n-thing title="Better Late Than Never" content-style="margin-top: 10px;">
+<NList hoverable clickable class="mt-5">
+  <NListItem>
+    <NThing title="Better Late Than Never" content-style="margin-top: 10px;">
       <template #description>
-        <n-space size="small" style="margin-top: 4px">
-          <n-tag :bordered="false" type="info" size="small">
+        <NSpace size="small" style="margin-top: 4px">
+          <NTag :bordered="false" type="info" size="small">
             Tag A
-          </n-tag>
-          <n-tag :bordered="false" type="info" size="small">
+          </NTag>
+          <NTag :bordered="false" type="info" size="small">
             Tag B
-          </n-tag>
-        </n-space>
+          </NTag>
+        </NSpace>
       </template>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco.
-    </n-thing>
-  </n-list-item>
-  <n-list-item>
-    <n-thing title="Lorem Ipsum" content-style="margin-top: 10px;">
+    </NThing>
+  </NListItem>
+  <NListItem>
+    <NThing title="Lorem Ipsum" content-style="margin-top: 10px;">
       <template #description>
-        <n-space size="small" style="margin-top: 4px">
-          <n-tag :bordered="false" type="info" size="small">
+        <NSpace size="small" style="margin-top: 4px">
+          <NTag :bordered="false" type="info" size="small">
             Tag C
-          </n-tag>
-          <n-tag :bordered="false" type="info" size="small">
+          </NTag>
+          <NTag :bordered="false" type="info" size="small">
             Tag D
-          </n-tag>
-        </n-space>
+          </NTag>
+        </NSpace>
       </template>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco.
-    </n-thing>
-  </n-list-item>
-</n-list>
+    </NThing>
+  </NListItem>
+</NList>
 
 ---
 
-## NMarquee
+## `NMarquee`
 
-<n-marquee auto-fill>
-  <n-image
-    width="80"
-    height="80"
-    src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg"
-    style="margin-right: 24px"
+```markdown
+<NMarquee auto-fill>
+  <NImage
+    width="200"
+    src="https://sli.dev/logo-title.png"
   />
-</n-marquee>
+</NMarquee>
+```
+
+<NMarquee auto-fill>
+  <NImage
+    width="200"
+    src="https://sli.dev/logo-title.png"
+  />
+</NMarquee>
