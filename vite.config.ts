@@ -15,10 +15,10 @@ const naive = (): Plugin => {
         return resolvedVirtualModuleId;
       }
     },
-    load(id) {
+    async load(id) {
       if (id === resolvedVirtualModuleId) {
         // FIXME: virtual modules works, but this line is run before value is set
-        return `export const components = ${JSON.stringify(components.value)}`;
+        return `export const components = ${JSON.stringify(await components)}`;
       }
     },
   };
