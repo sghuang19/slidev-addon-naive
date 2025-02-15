@@ -20,7 +20,7 @@ transition: fade
   [github.com/sghuang19/slidev-addon-naive](https://github.com/sghuang19/slidev-addon-naive)
 - Preview: [naive.sghuang.com](https://naive.sghuang.com)
 
-<div class="flex justify-center gap-24">
+<div flex justify-center gap-24>
   <NImage class=""
      width="250" src="https://sli.dev/logo-title.png"
   />
@@ -156,7 +156,7 @@ Tertiary button
 </NAlert>
 ```
 
-<NAlert title="Alert Title" type="info" class="mt-10">
+<NAlert title="Alert Title" type="info" mt-10>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
   veniam, quis nostrud exercitation ullamco.
@@ -168,6 +168,9 @@ Tertiary button
 
 ```markdown
 <NProgress type="circle" status="info" :percentage="49" />
+<NProgress
+  type="line" status="success" :percentage="30" indicator-placement="inside"
+/>
 ```
 
 <NSpace flex justify-center mt-10>
@@ -190,7 +193,7 @@ Tertiary button
 
 ## `NCard`
 
-<div style="display: flex; gap: 25px;">
+<div flex gap-10>
   <NCard title="Card with Cover">
     <template #cover>
       <img src="https://picsum.photos/400/200" alt="cover">
@@ -217,7 +220,7 @@ Tertiary button
 
 ## `NList`
 
-<NList hoverable clickable class="mt-5">
+<NList hoverable clickable mt-5>
   <NListItem>
     <NThing title="Better Late Than Never" content-style="margin-top: 10px;">
       <template #description>
