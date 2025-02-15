@@ -11,9 +11,8 @@ fonts:
 # `slidev-addon-naive`
 
 <div>
-  A <NButton strong type="info" tag="a" href="https://sli.dev"> Slidev
-  </NButton> addon that brings <NButton strong type="primary" tag="a"
-  href="https://naiveui.com"> Naive UI </NButton> components to your slide show.
+  A <NButton strong type="info"> Slidev </NButton> addon that brings <NButton
+  strong type="primary" > Naive UI </NButton> components to your slide show.
 </div>
 
 - Author: [Samuel Huang](https://sghuang.com)
@@ -23,13 +22,21 @@ fonts:
   [github.com/sghuang19/slidev-addon-naive](https://github.com/sghuang19/slidev-addon-naive)
 - Preview: [naive.sghuang.com](https://naive.sghuang.com)
 
-<div flex justify-center gap-24>
-  <NImage class=""
-     width="250" src="https://sli.dev/logo-title.png"
-  />
-  <NImage class="pb-15"
-     width="125" src="https://www.naiveui.com/assets/naivelogo-BdDVTUmz.svg"
-  />
+<div flex justify-center items-center>
+  <p shrink class="-translate-y-8">
+    This slideshow demonstrates a few components from Naive UI. For a full demo
+    of all supported components, please visit <a
+    href="https://naiveui.com">naiveui.com</a>.
+  </p>
+
+  <div flex justify-center gap-8 shrink-0>
+    <NImage class=""
+      width="250" src="https://sli.dev/logo-title.png"
+    />
+    <NImage class="pb-15"
+      width="125" src="https://www.naiveui.com/assets/naivelogo-BdDVTUmz.svg"
+    />
+  </div>
 </div>
 
 ---
