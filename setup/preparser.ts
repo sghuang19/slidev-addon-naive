@@ -54,6 +54,8 @@ const extractComponents = (filepath: string): string[] => {
 
 export let components: Ref<string[]> | undefined;
 
+// FIXME: preparser is only executed when used as a Slidev addon
+
 // see https://sli.dev/custom/config-parser
 export default definePreparserSetup(({ filepath }) => {
   components = ref(extractComponents(filepath));
