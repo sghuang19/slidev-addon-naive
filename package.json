@@ -29,11 +29,13 @@
     "uno.config.ts"
   ],
   "scripts": {
+    "build": "slidev build",
     "dev": "slidev",
     "format": "prettier -c .",
     "format:write": "prettier -w .",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
+    "preview": "vite preview",
     "sort": "bunx sort-package-json"
   },
   "dependencies": {
