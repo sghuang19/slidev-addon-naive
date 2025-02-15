@@ -273,16 +273,10 @@ Tertiary button
 
 ```markdown
 <NMarquee auto-fill>
-  <NImage
-    width="200"
-    src="https://sli.dev/logo-title.png"
-  />
+  <NImage width="200" src="https://sli.dev/logo-title.png" />
 </NMarquee>
 ```
 
 <NMarquee auto-fill>
-  <NImage
-    width="200"
-    src="https://sli.dev/logo-title.png"
-  />
+  <NImage width="200" src="https://sli.dev/logo-title.png" />
 </NMarquee>
