@@ -24,9 +24,9 @@
   "files": [
     "setup/",
     "src/",
-    "slides.md",
     "style.css",
-    "uno.config.ts"
+    "uno.config.ts",
+    "vite.config.ts"
   ],
   "scripts": {
     "build": "slidev build",
@@ -39,6 +39,7 @@
     "sort": "bunx sort-package-json"
   },
   "dependencies": {
+    "kolorist": "^1.8.0",
     "naive-ui": "^2.41.0"
   },
   "devDependencies": {
@@ -51,6 +52,7 @@
     "eslint-plugin-vue": "^9.32.0",
     "globals": "^15.14.0",
     "prettier": "^3.5.0",
+    "prettier-plugin-sh": "^0.14.0",
     "prettier-plugin-slidev": "^1.0.5",
     "typescript-eslint": "^8.24.0"
   },
