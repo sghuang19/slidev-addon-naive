@@ -5,8 +5,6 @@ import { join } from "node:path";
 import { defineConfig } from "vite";
 import type { Plugin } from "vite";
 
-import { visualizer } from "rollup-plugin-visualizer";
-
 const naive = (): Plugin => {
   const virtualModuleId = "virtual:naive";
   const resolvedVirtualModuleId = "\0" + virtualModuleId;
@@ -30,5 +28,5 @@ const naive = (): Plugin => {
 };
 
 export default defineConfig({
-  plugins: [naive(), visualizer({ open: true, gzipSize: true })],
+  plugins: [naive()],
 });
