@@ -7,8 +7,8 @@ import useInjectStyle from "./useInjectStyle.ts";
 import useStyles from "./useStyles.ts";
 
 export default {
-  async install(app: App) {
-    await useComponents(app); // register components
+  install(app: App) {
+    useComponents(app); // register components
     useInjectStyle(); // inject styles to <head>
     useConfigProvider(app); // provide theme overrides
     useStyles(); // additional style adjustments
