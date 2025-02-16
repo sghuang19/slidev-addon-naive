@@ -3,7 +3,7 @@
 A [Slidev](https://sli.dev) addon that brings [Naive UI](https://naiveui.com)
 components to your slides.
 
-<div align="center">
+<div style="text-align: center">
   <a href="https://npmjs.com/package/slidev-addon-naive">
     <img
       src="https://img.shields.io/npm/v/slidev-addon-naive?color=2B90B6"
@@ -49,7 +49,13 @@ Alternatively, you can enable the addon by adding the following property into
 }
 ```
 
-## As a Vue Plugin (Recommended)
+## As a Vue Plugin
+
+> [!WARNING]
+>
+> This mode is only recommended for advanced users who specifically require it.
+> Certain features, such as tree-shaking, are exclusively available in Slidev
+> addon mode.
 
 Since `v0.7.0`, you can also use this as a Vue plugin. This helps avoid some
 configuration file conflicts.
@@ -101,8 +107,8 @@ supported, along with full compatibility for props and slots.
 ## Known Issues
 
 - If you found your local configs are not taking effect (e.g. `style.css`,
-  `uno.config.ts`), try using this addon as a
-  [Vue Plugin](#as-a-vue-plugin-recommended) instead (requires `v0.7.0`).
+  `uno.config.ts`), try using this addon as a [Vue Plugin](#as-a-vue-plugin)
+  instead (requires `v0.7.0`).
 
 ## Latest Changes
 
