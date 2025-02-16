@@ -1,7 +1,7 @@
 {
   "version": 2,
   "framework": "vite",
+  "devCommand": "echo 'running Slidev in another process'",
   "installCommand": "bun install",
-  "devCommand": "bun run dev",
   "buildCommand": "bun run build"
 }

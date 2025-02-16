@@ -31,7 +31,7 @@
   "scripts": {
     "build": "slidev build",
     "dev": "slidev",
-    "dev:vercel": "vercel dev",
+    "dev:vercel": "./scripts/vercel-dev.sh",
     "format": "prettier -c .",
     "format:write": "prettier -w .",
     "lint": "eslint .",
