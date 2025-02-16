@@ -24,10 +24,9 @@
   "files": [
     "setup/",
     "src/",
-    "scripts/postinstall.sh",
-    "slides.md",
     "style.css",
-    "uno.config.ts"
+    "uno.config.ts",
+    "vite.config.ts"
   ],
   "scripts": {
     "build": "slidev build",
