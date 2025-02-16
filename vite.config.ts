@@ -1,10 +1,11 @@
-// vite.config.ts
 import { readFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
 import { defineConfig } from "vite";
 import type { Plugin } from "vite";
+
+import { visualizer } from "rollup-plugin-visualizer";
 
 const naive = (): Plugin => {
   const virtualModuleId = "virtual:naive";
@@ -19,16 +20,15 @@ const naive = (): Plugin => {
     },
     load(id) {
       if (id === resolvedVirtualModuleId) {
-        const components = readFileSync(
-          join(tmpdir(), "slidev-addon-naive.json"),
-          "utf-8",
-        );
-        return `const components = ${components}; export default components;`;
+        const components = JSON.parse(
+          readFileSync(join(tmpdir(), "slidev-addon-naive.json"), "utf-8"),
+        ) as string[];
+        return `export { ${components.join(", ")} } from "naive-ui";`;
       }
     },
   };
 };
 
 export default defineConfig({
-  plugins: [naive()],
+  plugins: [naive(), visualizer({ open: true, gzipSize: true })],
 });
