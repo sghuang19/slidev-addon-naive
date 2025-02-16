@@ -2,15 +2,14 @@ import { readFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
-import { defineConfig } from "vite";
-import type { Plugin } from "vite";
+import { type Plugin, defineConfig } from "vite";
 
 const naive = (): Plugin => {
   const virtualModuleId = "virtual:naive";
   const resolvedVirtualModuleId = "\0" + virtualModuleId;
 
   return {
-    name: "naive-components",
+    name: "naive",
     resolveId(id) {
       if (id === virtualModuleId) {
         return resolvedVirtualModuleId;
