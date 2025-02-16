@@ -100,9 +100,6 @@ supported, along with full compatibility for props and slots.
 
 ## Known Issues
 
-- No JavaScript support yet. Please use runtime that natively supports
-  TypeScript such as [Bun](https://bun.sh) or
-  [Node since `v22.6.0`](https://nodejs.org/en/learn/typescript/run-natively).
 - If you found your local configs are not taking effect (e.g. `style.css`,
   `uno.config.ts`), try using this addon as a
   [Vue Plugin](#as-a-vue-plugin-recommended) instead (requires `v0.7.0`).

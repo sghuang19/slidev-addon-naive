@@ -58,9 +58,5 @@
   },
   "peerDependencies": {
     "@slidev/types": "*"
-  },
-  "engines": {
-    "bun": ">=1.0.0",
-    "node": ">=22.6.0"
   }
 }
