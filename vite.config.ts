@@ -1,5 +1,7 @@
 import { type Plugin, defineConfig } from "vite";
 
+import naive from "naive-ui";
+
 const naivePlugin = (): Plugin => {
   const virtualModuleId = "virtual:naive";
   const resolvedVirtualModuleId = "\0" + virtualModuleId;
