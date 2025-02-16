@@ -34,7 +34,6 @@
     "dev": "slidev",
     "format": "prettier -c .",
     "format:write": "prettier -w .",
-    "postinstall": "./scripts/postinstall.sh",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "preview": "vite preview",
