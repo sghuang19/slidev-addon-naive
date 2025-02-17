@@ -3,8 +3,6 @@
 node_modules/
 .idea/
 
-dist/
-
 .npmrc
 
 bun.lock
