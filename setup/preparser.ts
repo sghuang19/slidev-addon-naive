@@ -1,6 +1,4 @@
 import { execSync } from "node:child_process";
-import { writeFileSync } from "node:fs";
-import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -52,15 +50,10 @@ const extractComponents = (filepath: string): string[] => {
   }
 };
 
-const writeComponents = (components: string[]) => {
-  const path = join(tmpdir(), "slidev-addon-naive.json");
-  writeFileSync(path, JSON.stringify(components));
-};
-
 // FIXME: preparser is only executed when used as a Slidev addon
 
 // see https://sli.dev/custom/config-parser
 export default definePreparserSetup(({ filepath }) => {
-  writeComponents(extractComponents(filepath));
+  process.env.NAIVE_COMPONENTS = String(extractComponents(filepath));
   return []; // do nothing
 });

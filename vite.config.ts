@@ -1,7 +1,3 @@
-import { readFileSync } from "node:fs";
-import { tmpdir } from "node:os";
-import { join } from "node:path";
-
 import { type Plugin, defineConfig } from "vite";
 
 const naive = (): Plugin => {
@@ -17,10 +13,7 @@ const naive = (): Plugin => {
     },
     load(id) {
       if (id === resolvedVirtualModuleId) {
-        const components = JSON.parse(
-          readFileSync(join(tmpdir(), "slidev-addon-naive.json"), "utf-8"),
-        ) as string[];
-        return `export { ${components.join(", ")} } from "naive-ui";`;
+        return `export { ${process.env.NAIVE_COMPONENTS} } from "naive-ui";`;
       }
     },
   };
