@@ -29,7 +29,7 @@
     "vite.config.ts"
   ],
   "workspaces": [
-    "docs"
+    "demo"
   ],
   "scripts": {
     "build": "slidev build",
