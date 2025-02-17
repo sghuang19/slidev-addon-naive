@@ -1,5 +1,6 @@
 {
   "name": "demo",
+  "private": "true",
   "scripts": {
     "build": "slidev build",
     "dev": "slidev",
