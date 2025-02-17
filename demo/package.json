@@ -1,6 +1,5 @@
 {
-  "name": "docs",
-  "type": "module",
+  "name": "demo",
   "scripts": {
     "build": "slidev build",
     "dev": "slidev"
