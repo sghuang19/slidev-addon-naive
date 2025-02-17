@@ -1,7 +1,7 @@
 const parseSize = (size: string): { value: number; unit: string } | null => {
   const match = /^(\d+(?:\.\d+)?)(px|rem|em)$/.exec(size);
   if (!match) {
-    console.error(`[Naive] Invalid size string: ${size}`);
+    console.error("[Naive] Invalid size string:", size);
     return null;
   }
   return {
@@ -28,7 +28,7 @@ export const getMultiplier = (baseSize: string, targetSize: string): number => {
   const parsedBaseSize = parseSize(baseSize);
   const parsedTargetSize = parseSize(targetSize);
   if (!parsedBaseSize || !parsedTargetSize) {
-    console.error(`[Naive] Fall back to multiplier = 1`);
+    console.error("[Naive] Fall back to multiplier = 1");
     return 1;
   }
   return parsedTargetSize.value / parsedBaseSize.value;
