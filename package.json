@@ -28,6 +28,9 @@
     "uno.config.ts",
     "vite.config.ts"
   ],
+  "workspaces": [
+    "docs"
+  ],
   "scripts": {
     "build": "slidev build",
     "dev": "slidev",
