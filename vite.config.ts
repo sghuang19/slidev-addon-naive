@@ -13,7 +13,9 @@ const naivePlugin = (): Plugin => {
     },
     load(id) {
       if (id === resolvedVirtualModuleId) {
-        return `export { ${process.env.NAIVE_COMPONENTS} } from "naive-ui";`;
+        return `export { ${
+          process.env.NAIVE_COMPONENTS ?? "default"
+        } } from "naive-ui";`;
       }
     },
   };
