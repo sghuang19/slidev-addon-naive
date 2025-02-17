@@ -1,6 +1,6 @@
 import { type Plugin, defineConfig } from "vite";
 
-const naive = (): Plugin => {
+const naivePlugin = (): Plugin => {
   const virtualModuleId = "virtual:naive";
   const resolvedVirtualModuleId = "\0" + virtualModuleId;
 
@@ -20,5 +20,5 @@ const naive = (): Plugin => {
 };
 
 export default defineConfig({
-  plugins: [naive()],
+  plugins: [naivePlugin()],
 });

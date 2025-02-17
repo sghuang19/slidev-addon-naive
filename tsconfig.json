@@ -1,8 +1,5 @@
 {
   "compilerOptions": {
-    "paths": {
-      "slidev-addon-naive": ["./src/index.ts"]
-    },
     "module": "NodeNext",
     "moduleResolution": "nodenext",
     "strict": true,

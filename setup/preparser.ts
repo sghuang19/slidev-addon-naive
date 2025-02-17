@@ -4,6 +4,8 @@ import { fileURLToPath } from "node:url";
 
 import { definePreparserSetup } from "@slidev/types";
 
+import naive from "naive-ui";
+
 import { green, red } from "kolorist";
 
 const extractComponents = (filepath: string): string[] => {
@@ -54,6 +56,8 @@ const extractComponents = (filepath: string): string[] => {
 
 // see https://sli.dev/custom/config-parser
 export default definePreparserSetup(({ filepath }) => {
-  process.env.NAIVE_COMPONENTS = String(extractComponents(filepath));
+  process.env.NAIVE_COMPONENTS = String(
+    extractComponents(filepath).filter((component) => component in naive),
+  );
   return []; // do nothing
 });
