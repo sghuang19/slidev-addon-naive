@@ -1,0 +1,13 @@
+{
+  "name": "docs",
+  "type": "module",
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev"
+  },
+  "dependencies": {
+    "@slidev/cli": "^51.1.1",
+    "@slidev/theme-default": "^0.25.0",
+    "slidev-addon-naive": "file:.."
+  }
+}
