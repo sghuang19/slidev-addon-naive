@@ -14,7 +14,6 @@ export default ts.config(
     languageOptions: {
       parserOptions: {
         projectService: true,
-        tsconfigRootDir: import.meta.dirname,
       },
     },
   },
