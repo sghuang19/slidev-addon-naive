@@ -38,7 +38,7 @@
     "format:write": "prettier -w .",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "preview": "vite preview",
+    "preview": "bun run --cwd=demo preview",
     "sort": "bunx sort-package-json"
   },
   "dependencies": {
