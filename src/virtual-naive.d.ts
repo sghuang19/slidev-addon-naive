@@ -1,5 +1,8 @@
 /** Virtual module defined by Vite */
+
 declare module "virtual:naive" {
-  const components: string[];
-  export default components;
+  export * from "naive-ui";
+  import naive from "naive-ui";
+  const defaultExport: typeof naive | undefined;
+  export default defaultExport;
 }
