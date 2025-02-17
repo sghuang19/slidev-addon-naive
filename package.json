@@ -32,8 +32,8 @@
     "demo"
   ],
   "scripts": {
-    "build": "slidev build",
-    "dev": "slidev",
+    "build": "bun run --cwd=demo build",
+    "dev": "bun --cwd=demo dev",
     "format": "prettier -c .",
     "format:write": "prettier -w .",
     "lint": "eslint .",
