@@ -1,0 +1,13 @@
+{
+  "name": "demo",
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@slidev/cli": "^51.1.1",
+    "@slidev/theme-default": "^0.25.0",
+    "slidev-addon-naive": "file:.."
+  }
+}

@@ -28,14 +28,17 @@
     "uno.config.ts",
     "vite.config.ts"
   ],
+  "workspaces": [
+    "demo"
+  ],
   "scripts": {
-    "build": "slidev build",
-    "dev": "slidev",
+    "build": "bun run --cwd=demo build",
+    "dev": "bun --cwd=demo dev",
     "format": "prettier -c .",
     "format:write": "prettier -w .",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "preview": "vite preview",
+    "preview": "bun run --cwd=demo preview",
     "sort": "bunx sort-package-json"
   },
   "dependencies": {
