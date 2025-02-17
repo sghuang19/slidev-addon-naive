@@ -8,6 +8,6 @@
   "dependencies": {
     "@slidev/cli": "^51.1.1",
     "@slidev/theme-default": "^0.25.0",
-    "slidev-addon-naive": "file:.."
+    "slidev-addon-naive": "^0.8.4"
   }
 }
