@@ -1,7 +1,6 @@
 ---
-# not needed in addon dev dir or in Vue plugin mode
-# addons:
-#  - naive
+addons:
+  - naive
 transition: fade
 fonts:
   sans: ml, Robot
