@@ -1,11 +1,18 @@
-import { ref } from "vue";
+import { type ComputedRef, computed, ref } from "vue";
 
-// must be a ref for Naive components to be rendered with overrides
-const fontSize = ref("16px"); // default font size
+import { getMultiplier } from "./utils.ts";
 
-export default fontSize; // must be exported early for other modules to use
+const fontSize = ref("14px"); // default font size
 
-const setBaseFontSize = () => {
+const multiplier: ComputedRef<number> = computed(() => {
+  const newVal = getMultiplier("14px", fontSize.value);
+  console.debug(`[Naive] Multiplier set to ${newVal}`);
+  return newVal;
+});
+
+export default multiplier;
+
+const setFontSize = () => {
   const element = document.querySelector(".slidev-layout");
   if (element) {
     const computedStyle = window.getComputedStyle(element);
@@ -13,12 +20,12 @@ const setBaseFontSize = () => {
     console.debug("[Naive] Base font size updated:", fontSize.value);
   } else {
     console.error(
-      "[Naive] .slidev-layout not found, using default font size (16px)",
+      "[Naive] .slidev-layout not found, using default font size (14px)",
     );
   }
 };
 
-const observeBaseFontSize = () => {
+const observeFontSize = () => {
   // Setup observer for DOM changes and font size changes
   const layoutObserver = new MutationObserver(() => {
     const layout = document.querySelector(".slidev-layout");
@@ -30,11 +37,11 @@ const observeBaseFontSize = () => {
     layoutObserver.disconnect(); // stop observing the document body
 
     // Create new observers to get updated font size
-    const sizeObserver = new ResizeObserver(setBaseFontSize);
+    const sizeObserver = new ResizeObserver(setFontSize);
     // somehow needed to get styles from UnoCSS @apply directives
     sizeObserver.observe(layout);
 
-    const styleObserver = new MutationObserver(setBaseFontSize);
+    const styleObserver = new MutationObserver(setFontSize);
     // needed to get styles update in runtime
     styleObserver.observe(layout, {
       attributes: true,
@@ -44,7 +51,7 @@ const observeBaseFontSize = () => {
     // TODO: this won't change font size in runtime. a polling approach can be
     // used, but I'm hesitating because of performance concerns
 
-    setBaseFontSize(); // make an attempt to set the font size
+    setFontSize(); // make an attempt to set the font size
   });
 
   // Start observing the document body for layout appearance
@@ -61,5 +68,5 @@ if (typeof window === "undefined") {
     `[Naive] Window is undefined, can't observe DOM to set base font size`,
   );
 } else {
-  observeBaseFontSize();
+  observeFontSize();
 }
