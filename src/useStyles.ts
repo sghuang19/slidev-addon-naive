@@ -7,7 +7,7 @@ import { deriveSize, getMultiplier } from "./utils.ts";
 
 const multiplier: ComputedRef<number> = computed(() => {
   const newVal = getMultiplier("14px", baseFontSize.value);
-  console.debug(`[Naive] Multiplier set to ${newVal}`);
+  console.debug("[Naive] Multiplier set to", newVal);
   return newVal;
 });
 

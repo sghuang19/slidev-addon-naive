@@ -6,58 +6,30 @@ import { definePreparserSetup } from "@slidev/types";
 
 import naive from "naive-ui";
 
-import { green, red } from "kolorist";
-
 const extractComponents = (filepath: string): string[] => {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = dirname(__filename);
   const extractorPath = join(__dirname, "../src/extractor.sh");
 
-  try {
-    const output = execSync(`"${extractorPath}" "${filepath}"`, {
-      encoding: "utf-8",
-      shell: process.platform === "win32" ? "powershell.exe" : undefined,
-    });
+  const output = execSync(`"${extractorPath}" "${filepath}"`, {
+    encoding: "utf-8",
+    shell: process.platform === "win32" ? "powershell.exe" : undefined,
+  });
 
-    const result = output.trim().split("\n");
-    console.log(
-      green(`  [Naive] Extracted components: ${JSON.stringify(result)}`),
-    );
-
-    return result;
-  } catch (error) {
-    if (!(error instanceof Error)) {
-      console.error(
-        red(
-          `  [Naive] Failed to extract components due to unknown error: \
-          ${String(error)}`,
-        ),
-      );
-      return [];
-    }
-
-    if (error.name === "EACCES") {
-      console.error(
-        red(
-          "  [Naive] Failed to extract Naive UI components due to permission \
-          denied. Make sure the post-install script is executed.",
-        ),
-      );
-    }
-
-    console.error(
-      red(`  [Naive] Failed to extract Naive UI components: ${error.message}`),
-    );
-    return [];
-  }
+  return output.trim().split("\n");
 };
-
-// FIXME: preparser is only executed when used as a Slidev addon
 
 // see https://sli.dev/custom/config-parser
 export default definePreparserSetup(({ filepath }) => {
-  process.env.NAIVE_COMPONENTS = String(
-    extractComponents(filepath).filter((component) => component in naive),
-  );
+  try {
+    process.env.NAIVE_COMPONENTS = extractComponents(filepath)
+      .filter((component) => component in naive)
+      .toString();
+  } catch (error) {
+    console.error(
+      "  [Naive] Failed to extract Naive UI components, tree-shaking disabled:",
+      error,
+    );
+  }
   return []; // do nothing
 });

@@ -1,13 +1,18 @@
-import { type App } from "vue";
+import type { App, DefineComponent } from "vue";
 
 import * as naive from "virtual:naive";
 
-// FIXME: typecheck to make sure component exists
+const plugin = naive.default;
 
 const useComponents = (app: App) => {
-  Object.entries(naive).forEach(([name, component]) => {
-    app.component(name, component);
-  });
+  if (plugin) {
+    console.warn("[Naive] Tree-shaking not available");
+    app.use(plugin);
+  } else {
+    Object.entries(naive).forEach(([name, component]) => {
+      app.component(name, component as DefineComponent);
+    });
+  }
 };
 
 export default useComponents;
