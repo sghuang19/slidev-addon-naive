@@ -1,4 +1,4 @@
-import { type App, computed, ref } from "vue";
+import { type Plugin, computed, ref } from "vue";
 
 import { darkTheme, lightTheme } from "naive-ui";
 import { ConfigProviderInjection } from "naive-ui/es/config-provider/src/internal-interface.js";
@@ -13,7 +13,7 @@ import { themeOverrides } from "./useStyles.ts";
  * https://www.naiveui.com/en-US/docs/theme
  */
 
-const useConfigProvider = (app: App) => {
+const configProvider: Plugin = (app) => {
   // Manually inject n-config-provider context
   app.provide("n-config-provider", {
     mergedThemeRef: computed(() => (isDark.value ? darkTheme : lightTheme)), // required
@@ -22,4 +22,4 @@ const useConfigProvider = (app: App) => {
   } as Partial<ConfigProviderInjection>);
 };
 
-export default useConfigProvider;
+export default configProvider;
