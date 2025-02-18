@@ -1,8 +1,7 @@
 FILE_PATH=${1:-"slides.md"}
 
 grep -o '<\(N[A-Z]\|n-\)[A-Za-z-]*' "$FILE_PATH" \
-  | sort \
-  | uniq \
+  | sort | uniq \
   | sed -E 's/^<//' \
   | while read -r line; do
     case "$line" in
@@ -20,4 +19,5 @@ grep -o '<\(N[A-Z]\|n-\)[A-Za-z-]*' "$FILE_PATH" \
           | sed 's/ //g'
         ;;
     esac
-  done
+  done \
+  | sort | uniq
