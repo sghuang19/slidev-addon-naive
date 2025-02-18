@@ -6,20 +6,21 @@ import { definePreparserSetup } from "@slidev/types";
 
 import naive from "naive-ui";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const extractor = join(
+  __dirname,
+  `../src/extractor.${process.platform === "win32" ? "ps1" : "sh"}`,
+);
+
 export const extractComponents = (filepath: string): string[] => {
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname = dirname(__filename);
-  const extractorPath = join(__dirname, "../src/extractor.sh");
-
-  const output = execSync(`"${extractorPath}" "${filepath}"`, {
+  const components = execSync(`"${extractor}" "${filepath}"`, {
     encoding: "utf-8",
-    shell: process.platform === "win32" ? "powershell.exe" : undefined,
-  });
-
-  const result = output.trim().split("\n");
-  console.debug("[Naive] Components used:", JSON.stringify(result));
-
-  return result;
+  })
+    .trim()
+    .split("\n");
+  console.debug("[Naive] Components used:", JSON.stringify(components));
+  return components;
 };
 
 // see https://sli.dev/custom/config-parser
