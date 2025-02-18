@@ -2,6 +2,8 @@ import { ref } from "vue";
 
 const isDark = ref(false);
 
+export default isDark;
+
 if (typeof window !== "undefined") {
   // Initialize with current state
   isDark.value = document.documentElement.classList.contains("dark");
@@ -17,5 +19,3 @@ if (typeof window !== "undefined") {
     attributeFilter: ["class"],
   });
 }
-
-export default isDark;
