@@ -1,4 +1,6 @@
-const useInjectStyle = () => {
+import { type Plugin } from "vue";
+
+const styleInjector: Plugin = () => {
   // Inject Naive UI styles into <head> element
   if (typeof window !== "undefined") {
     const head = document.head;
@@ -11,4 +13,4 @@ const useInjectStyle = () => {
   }
 };
 
-export default useInjectStyle;
+export default styleInjector;
