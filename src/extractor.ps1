@@ -1,16 +1,16 @@
-param(
-    [string] $FilePath
-)
+param( [string] $FilePath )
 
 Get-Content $FilePath | 
 Select-String -AllMatches '(?<=<)(N[A-Z]|n-)[A-Za-z-]*' | 
 ForEach-Object { $_.Matches.Value } |
 Sort-Object -Unique |
 ForEach-Object {
-    $_ -match '^N[A-Z]' ?
+    $_ -clike 'N*' ?
     $_ :
-    $_ -split '-' |
-    ForEach-Object { $_[0].ToString().ToUpper() + $_.Substring(1) } |
-    Join-String
+    (
+        $_ -split '-' |
+        ForEach-Object { (Get-Culture).TextInfo.ToTitleCase($_) } |
+        Join-String
+    )
 } |
 Sort-Object -Unique

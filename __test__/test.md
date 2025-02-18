@@ -1,9 +1,19 @@
 # Test Cases
 
-<NButton>
+## Positive Cases
 
-<NButtonGroup>
+<NButton> and <NButtonGroup>
 
-<n-alert>
+<n-alert> and <n-config-provider>
 
-<n-config-provider>
+<NA>
+
+<n-a>
+
+## Negative Cases
+
+<div>Test Cases</div>
+
+<not-a-component>
+
+<NotAComponent>
