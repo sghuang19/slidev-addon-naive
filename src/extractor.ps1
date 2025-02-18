@@ -1,14 +1,16 @@
 param(
-    [string]$FILE_PATH = "slides.md"
+    [string] $FilePath
 )
 
-# 1. Extract open tags of Naive UI components and
-# 2. Remove duplicates
-# 3. Remove prefixes and suffixes
-# 4. Remove duplicates again
-
-(Get-Content $FILE_PATH | 
-Select-String -Pattern "<N[A-Z][a-zA-Z]*[ />]" -AllMatches).Matches.Value | 
-Sort-Object -Unique | 
-ForEach-Object { $_ -replace "^<(.*)[ />]$", '$1' } | 
+Get-Content $FilePath | 
+Select-String -AllMatches '(?<=<)(N[A-Z]|n-)[A-Za-z-]*' | 
+ForEach-Object { $_.Matches.Value } |
+Sort-Object -Unique |
+ForEach-Object {
+    $_ -match '^N[A-Z]' ?
+    $_ :
+    $_ -split '-' |
+    ForEach-Object { $_[0].ToString().ToUpper() + $_.Substring(1) } |
+    Join-String
+} |
 Sort-Object -Unique
