@@ -1,4 +1,4 @@
-import { type ComputedRef, computed, watch } from "vue";
+import { type ComputedRef, type Plugin, computed, watch } from "vue";
 
 import { type GlobalThemeOverrides } from "naive-ui";
 
@@ -61,9 +61,9 @@ const setStyles = () => {
   document.head.appendChild(style);
 };
 
-const useStyles = () => {
+const styles: Plugin = () => {
   setStyles(); // set initial styles immediately
   watch(multiplier, setStyles);
 };
 
-export default useStyles;
+export default styles;

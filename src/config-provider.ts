@@ -3,8 +3,8 @@ import { type Plugin, computed, ref } from "vue";
 import { darkTheme, lightTheme } from "naive-ui";
 import { ConfigProviderInjection } from "naive-ui/es/config-provider/src/internal-interface.js";
 
+import { themeOverrides } from "./styles.ts";
 import isDark from "./useDarkTheme.ts";
-import { themeOverrides } from "./useStyles.ts";
 
 /**
  * I'm trying to mimic the design of original Naive UI, which can be found by
