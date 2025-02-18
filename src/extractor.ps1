@@ -12,4 +12,5 @@ ForEach-Object {
     $_ -split '-' |
     ForEach-Object { $_[0].ToString().ToUpper() + $_.Substring(1) } |
     Join-String
-}
+} |
+Sort-Object -Unique
