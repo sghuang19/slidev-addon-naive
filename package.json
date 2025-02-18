@@ -1,6 +1,6 @@
 {
   "name": "slidev-addon-naive",
-  "version": "0.9.0-next.1",
+  "version": "0.9.0-next.2",
   "description": "An addon that brings Naive UI components to Slidev.",
   "keywords": [
     "naive-ui",
@@ -43,7 +43,6 @@
     "test": "vitest"
   },
   "dependencies": {
-    "kolorist": "^1.8.0",
     "naive-ui": "^2.41.0"
   },
   "devDependencies": {
