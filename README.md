@@ -3,14 +3,14 @@
 A [Slidev](https://sli.dev) addon that brings [Naive UI](https://naiveui.com)
 components to your slides.
 
-<div style="text-align: center">
+<div align="center">
   <a href="https://npmjs.com/package/slidev-addon-naive">
     <img
       src="https://img.shields.io/npm/v/slidev-addon-naive?color=2B90B6"
       alt="NPM version"
     >
   </a>
-</div>
+</div align="center">
 
 ## Usage
 
