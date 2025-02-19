@@ -112,6 +112,8 @@ supported, along with full compatibility for props and slots.
 
 ## Latest Changes
 
+- **`v0.9.0`:** Added support for tree-shaking Naive UI components. This feature
+  only works when used [as a Slidev addon](#as-a-slidev-addon).
 - **`v0.8.4`:** Added support for dynamic icon size in `<Alert>`.
 - **`v0.8.3`:** Fixed a bug where `@apply` directives in local CSS files were
   not being applied correctly.
