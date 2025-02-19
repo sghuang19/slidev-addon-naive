@@ -127,6 +127,6 @@ supported, along with full compatibility for props and slots.
 - **`v0.5.1`:** Improved logic in `main.ts`.
 - **`v0.5.0`:** Added support for dynamic dark theme.
 - **`v0.4.0`:** Fixed a bug that caused Naive UI styles not loaded.
-- **`v0,3.0`:** Adopted a new way of loading components.
+- **`v0.3.0`:** Adopted a new way of loading components.
 - **`v0.2.0`:** Added all components.
 - **`v0.1.0`:** First working version with a few components.
