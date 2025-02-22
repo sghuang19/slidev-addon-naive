@@ -109,6 +109,10 @@ supported, along with full compatibility for props and slots.
 - If you found your local configs are not taking effect (e.g. `style.css`,
   `uno.config.ts`), try using this addon as a [Vue Plugin](#as-a-vue-plugin)
   instead (requires `v0.7.0`).
+- For specific components, some styles can only be applied using UnoCSS's
+  important prefix (`!<class-name>`). These styles must be added as a class name
+  rather than an attribute. Additionally, some styles simply can't be applied at
+  all due to the limitations of Naive UI as a styled components library.
 
 ## Latest Changes
 
