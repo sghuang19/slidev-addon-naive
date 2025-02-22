@@ -1,7 +1,8 @@
 #!/bin/sh
 
-sed -i '' '/<\/head>/i \
+cat << 'EOF' | sed -i '' -f - dist/index.html
+    /<\/head>/i\
     <meta property="og:title" content="Your Title" />\
     <meta property="og:description" content="Your Description" />\
-    <meta property="og:image" content="your-image-url" />\
-' dist/index.html
+    <meta property="og:image" content="your-image-url" />
+EOF
