@@ -2,8 +2,8 @@ import { type ComputedRef, computed, watch } from "vue";
 
 import { type GlobalThemeOverrides } from "naive-ui";
 
-import baseFontSize from "./useBaseFontSize.ts";
-import { deriveSize, getMultiplier } from "./utils.ts";
+import baseFontSize from "./useBaseFontSize";
+import { deriveSize, getMultiplier } from "./utils";
 
 const multiplier: ComputedRef<number> = computed(() => {
   const newVal = getMultiplier("14px", baseFontSize.value);

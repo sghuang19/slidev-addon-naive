@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "framework": "vite",
   "installCommand": "bun install",
   "outputDirectory": "demo/dist"
 }

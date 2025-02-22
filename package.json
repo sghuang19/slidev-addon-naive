@@ -34,6 +34,7 @@
   "scripts": {
     "build": "bun run --cwd=demo build",
     "dev": "bun --cwd=demo dev",
+    "dev:vercel": "vercel dev",
     "format": "prettier -c .",
     "format:write": "prettier -w .",
     "lint": "eslint .",
@@ -51,13 +52,16 @@
     "@slidev/theme-default": "^0.25.0",
     "@slidev/types": "^51.1.1",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@vercel/og": "^0.6.5",
     "eslint": "^9.20.1",
     "eslint-plugin-vue": "^9.32.0",
     "globals": "^15.15.0",
+    "playwright": "^1.50.1",
     "prettier": "^3.5.1",
     "prettier-plugin-sh": "^0.14.0",
     "prettier-plugin-slidev": "^1.0.5",
     "typescript-eslint": "^8.24.0",
+    "vercel": "^41.1.4",
     "vitest": "^3.0.6"
   },
   "peerDependencies": {
