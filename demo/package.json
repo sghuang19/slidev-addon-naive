@@ -2,7 +2,7 @@
   "name": "demo",
   "private": "true",
   "scripts": {
-    "build": "slidev build",
+    "build": "slidev build && ./og.sh",
     "dev": "slidev",
     "preview": "vite preview"
   },
