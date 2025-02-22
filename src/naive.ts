@@ -1,10 +1,10 @@
 import { type App } from "vue";
 
 import "../style.css";
-import useComponents from "./useComponents.ts";
-import useConfigProvider from "./useConfigProvider.ts";
-import useInjectStyle from "./useInjectStyle.ts";
-import useStyles from "./useStyles.ts";
+import useComponents from "./useComponents";
+import useConfigProvider from "./useConfigProvider";
+import useInjectStyle from "./useInjectStyle";
+import useStyles from "./useStyles";
 
 export default {
   install(app: App) {
