@@ -1,3 +1,7 @@
+import debugFactory from "debug";
+
+export const debug = debugFactory("slidev:naive");
+
 const parseSize = (size: string): { value: number; unit: string } | null => {
   const match = /^(\d+(?:\.\d+)?)(px|rem|em)$/.exec(size);
   if (!match) {
