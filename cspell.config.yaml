@@ -1,0 +1,20 @@
+dictionaries:
+  - fonts
+  - lorem-ipsum
+  - node
+words:
+  - bunx
+  - hoverable
+  - licence
+  - monolisa
+  - naiveui
+  - nodenext
+  - npmjs
+  - preparser
+  - sghuang
+  - slidev
+  - toupper
+  - trivago
+  - unocss
+  - vueuc
+useGitignore: true
