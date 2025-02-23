@@ -6,6 +6,8 @@ import { definePreparserSetup } from "@slidev/types";
 
 import naive from "naive-ui";
 
+import { debug } from "../src/utils.ts";
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const extractor = join(
@@ -19,7 +21,7 @@ export const extractComponents = (filepath: string): string[] => {
   })
     .trim()
     .split("\n");
-  console.debug("[Naive] Components used:", JSON.stringify(components));
+  debug("Components used:", JSON.stringify(components));
   return components;
 };
 

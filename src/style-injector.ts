@@ -1,5 +1,7 @@
 import { type Plugin } from "vue";
 
+import { debug } from "./utils.ts";
+
 const styleInjector: Plugin = () => {
   // Inject Naive UI styles into <head> element
   if (typeof window !== "undefined") {
@@ -9,7 +11,7 @@ const styleInjector: Plugin = () => {
       meta.name = name;
       head.appendChild(meta);
     });
-    console.debug("[Naive] Styles injected to <head>");
+    debug("Styles injected to <head>");
   }
 };
 
