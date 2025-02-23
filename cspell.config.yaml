@@ -1,10 +1,14 @@
 dictionaries:
   - fonts
   - lorem-ipsum
+  - node
 words:
   - bunx
   - hoverable
+  - licence
+  - monolisa
   - naiveui
+  - nodenext
   - npmjs
   - preparser
   - sghuang
@@ -12,3 +16,5 @@ words:
   - toupper
   - trivago
   - unocss
+  - vueuc
+useGitignore: true
