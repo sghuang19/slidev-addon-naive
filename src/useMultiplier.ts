@@ -48,9 +48,6 @@ const observeFontSize = () => {
       attributeFilter: ["style"],
     });
 
-    // TODO: this won't change font size in runtime. a polling approach can be
-    // used, but I'm hesitating because of performance concerns
-
     setFontSize(); // make an attempt to set the font size
   });
 

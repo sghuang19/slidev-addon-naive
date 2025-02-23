@@ -3,7 +3,3 @@
 .n-alert-body__title {
   font-size: var(--n-font-size-huge) !important;
 }
-
-.n-button {
-  --n-font-size: initial !important;
-}

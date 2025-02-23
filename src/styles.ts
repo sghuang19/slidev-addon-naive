@@ -21,7 +21,7 @@ export const themeOverrides: ComputedRef<GlobalThemeOverrides> = computed(
   () => {
     const derivedFontSizes = Object.fromEntries(
       Object.entries(DEFAULT_FONT_SIZES).map(([variant, size]) => [
-        `fontSize${variant}`,
+        `fontSize${variant.charAt(0).toUpperCase() + variant.slice(1)}`,
         deriveSize(size, multiplier.value),
       ]),
     );
