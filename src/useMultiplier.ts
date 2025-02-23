@@ -6,7 +6,7 @@ const fontSize = ref("14px"); // default font size
 
 const multiplier: ComputedRef<number> = computed(() => {
   const newVal = getMultiplier("14px", fontSize.value);
-  debug(`Multiplier set to ${newVal}`);
+  debug("Multiplier set to", newVal);
   return newVal;
 });
 
