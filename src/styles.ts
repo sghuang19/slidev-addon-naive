@@ -1,15 +1,9 @@
-import { type ComputedRef, computed, watch } from "vue";
+import { type ComputedRef, type Plugin, computed, watch } from "vue";
 
 import { type GlobalThemeOverrides } from "naive-ui";
 
-import baseFontSize from "./useBaseFontSize.ts";
-import { deriveSize, getMultiplier } from "./utils.ts";
-
-const multiplier: ComputedRef<number> = computed(() => {
-  const newVal = getMultiplier("14px", baseFontSize.value);
-  console.debug("[Naive] Multiplier set to", newVal);
-  return newVal;
-});
+import multiplier from "./useMultiplier.ts";
+import { deriveSize } from "./utils.ts";
 
 // see https://naiveui.com/en-US/os-theme/docs/theme#use-theme-vars
 const DEFAULT_FONT_SIZES = {
@@ -61,9 +55,9 @@ const setStyles = () => {
   document.head.appendChild(style);
 };
 
-const useStyles = () => {
+const styles: Plugin = () => {
   setStyles(); // set initial styles immediately
   watch(multiplier, setStyles);
 };
 
-export default useStyles;
+export default styles;
