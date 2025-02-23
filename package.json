@@ -40,6 +40,7 @@
     "lint:fix": "eslint --fix .",
     "preview": "bun run --cwd=demo preview",
     "sort": "bunx sort-package-json",
+    "spellcheck": "cspell .",
     "test": "vitest"
   },
   "dependencies": {
