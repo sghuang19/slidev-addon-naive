@@ -11,7 +11,7 @@ const styleInjector: Plugin = () => {
       meta.name = name;
       head.appendChild(meta);
     });
-    debug("[Naive] Styles injected to <head>");
+    debug("Styles injected to <head>");
   }
 };
 

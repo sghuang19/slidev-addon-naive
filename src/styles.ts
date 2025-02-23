@@ -26,7 +26,7 @@ export const themeOverrides: ComputedRef<GlobalThemeOverrides> = computed(
       ]),
     );
 
-    debug("[Naive] Derived font sizes:", derivedFontSizes);
+    debug("Derived font sizes:", derivedFontSizes);
 
     return { common: derivedFontSizes };
   },

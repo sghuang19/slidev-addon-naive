@@ -6,7 +6,7 @@ const fontSize = ref("14px"); // default font size
 
 const multiplier: ComputedRef<number> = computed(() => {
   const newVal = getMultiplier("14px", fontSize.value);
-  debug(`[Naive] Multiplier set to ${newVal}`);
+  debug(`Multiplier set to ${newVal}`);
   return newVal;
 });
 
@@ -17,7 +17,7 @@ const setFontSize = () => {
   if (element) {
     const computedStyle = window.getComputedStyle(element);
     fontSize.value = computedStyle.fontSize;
-    debug("[Naive] Base font size updated:", fontSize.value);
+    debug("Base font size updated:", fontSize.value);
   } else {
     console.error(
       "[Naive] .slidev-layout not found, using default font size (14px)",
@@ -33,7 +33,7 @@ const observeFontSize = () => {
       return;
     }
 
-    debug("[Naive] Found .slidev-layout, switching to style observer");
+    debug("Found .slidev-layout, switching to style observer");
     layoutObserver.disconnect(); // stop observing the document body
 
     // Create new observers to get updated font size
@@ -57,7 +57,7 @@ const observeFontSize = () => {
     subtree: true,
   });
 
-  debug("[Naive] Watching for .slidev-layout element to show up");
+  debug("Watching for .slidev-layout element to show up");
 };
 
 if (typeof window === "undefined") {

@@ -21,7 +21,7 @@ export const extractComponents = (filepath: string): string[] => {
   })
     .trim()
     .split("\n");
-  debug("[Naive] Components used:", JSON.stringify(components));
+  debug("Components used:", JSON.stringify(components));
   return components;
 };
 
