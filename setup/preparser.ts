@@ -6,7 +6,7 @@ import { definePreparserSetup } from "@slidev/types";
 
 import naive from "naive-ui";
 
-import { debug } from "../src/utils.ts";
+import { debug } from "../src/utils";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);

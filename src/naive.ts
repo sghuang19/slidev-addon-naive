@@ -1,10 +1,10 @@
 import { type Plugin } from "vue";
 
 import "../style.css";
-import components from "./components.ts";
-import configProvider from "./config-provider.ts";
-import styleInjector from "./style-injector.ts";
-import styles from "./styles.ts";
+import components from "./components";
+import configProvider from "./config-provider";
+import styleInjector from "./style-injector";
+import styles from "./styles";
 
 const naive: Plugin = (app) => {
   app.use(components); // register components

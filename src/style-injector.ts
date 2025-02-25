@@ -1,6 +1,6 @@
 import { type Plugin } from "vue";
 
-import { debug } from "./utils.ts";
+import { debug } from "./utils";
 
 const styleInjector: Plugin = () => {
   // Inject Naive UI styles into <head> element

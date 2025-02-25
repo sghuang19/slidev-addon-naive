@@ -2,8 +2,8 @@ import { type ComputedRef, type Plugin, computed, watch } from "vue";
 
 import { type GlobalThemeOverrides } from "naive-ui";
 
-import multiplier from "./useMultiplier.ts";
-import { debug, deriveSize } from "./utils.ts";
+import multiplier from "./useMultiplier";
+import { debug, deriveSize } from "./utils";
 
 // see https://naiveui.com/en-US/os-theme/docs/theme#use-theme-vars
 const DEFAULT_FONT_SIZES = {

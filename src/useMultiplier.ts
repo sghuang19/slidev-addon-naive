@@ -1,6 +1,6 @@
 import { type ComputedRef, computed, ref } from "vue";
 
-import { debug, getMultiplier } from "./utils.ts";
+import { debug, getMultiplier } from "./utils";
 
 const fontSize = ref("14px"); // default font size
 
