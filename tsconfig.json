@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
-    "module": "NodeNext",
-    "moduleResolution": "nodenext",
+    "module": "preserve",
+    "moduleResolution": "bundler",
     "strict": true,
-    "allowImportingTsExtensions": true,
     "noEmit": true
   },
   "include": ["**/*.ts"]
