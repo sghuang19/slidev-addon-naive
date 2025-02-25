@@ -6,3 +6,6 @@ node_modules/
 .npmrc
 
 bun.lock
+
+demo/dist/
+demo/stats.html

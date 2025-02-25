@@ -2,6 +2,7 @@ dictionaries:
   - fonts
   - lorem-ipsum
   - node
+useGitignore: true
 words:
   - bunx
   - hoverable
@@ -17,4 +18,3 @@ words:
   - trivago
   - unocss
   - vueuc
-useGitignore: true
