@@ -3,14 +3,14 @@
 A [Slidev](https://sli.dev) addon that brings [Naive UI](https://naiveui.com)
 components to your slides.
 
-<div style="text-align: center">
+<div align="center">
   <a href="https://npmjs.com/package/slidev-addon-naive">
     <img
       src="https://img.shields.io/npm/v/slidev-addon-naive?color=2B90B6"
       alt="NPM version"
     >
   </a>
-</div>
+</div align="center">
 
 ## Usage
 
@@ -106,12 +106,17 @@ supported, along with full compatibility for props and slots.
 
 ## Known Issues
 
-- If you found your local configs are not taking effect (e.g. `style.css`,
-  `uno.config.ts`), try using this addon as a [Vue Plugin](#as-a-vue-plugin)
-  instead (requires `v0.7.0`).
+- For specific components, some styles can only be applied using UnoCSS's
+  important prefix (`!<class-name>`). These styles must be added as a class name
+  rather than an attribute. Additionally, some styles simply can't be applied at
+  all due to the limitations of Naive UI as a styled components library.
+- The overview of slides is not displayed correctly. This bug is still under
+  investigation.
 
 ## Latest Changes
 
+- **`v0.9.0`:** Added support for tree-shaking Naive UI components. This feature
+  only works when used [as a Slidev addon](#as-a-slidev-addon).
 - **`v0.8.4`:** Added support for dynamic icon size in `<Alert>`.
 - **`v0.8.3`:** Fixed a bug where `@apply` directives in local CSS files were
   not being applied correctly.
@@ -125,6 +130,6 @@ supported, along with full compatibility for props and slots.
 - **`v0.5.1`:** Improved logic in `main.ts`.
 - **`v0.5.0`:** Added support for dynamic dark theme.
 - **`v0.4.0`:** Fixed a bug that caused Naive UI styles not loaded.
-- **`v0,3.0`:** Adopted a new way of loading components.
+- **`v0.3.0`:** Adopted a new way of loading components.
 - **`v0.2.0`:** Added all components.
 - **`v0.1.0`:** First working version with a few components.

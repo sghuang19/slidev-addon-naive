@@ -1,4 +1,4 @@
-import { type Plugin } from "vue";
+import type { DefineComponent, Plugin } from "vue";
 
 import * as naive from "virtual:naive";
 
@@ -10,7 +10,7 @@ const components: Plugin = (app) => {
     app.use(plugin);
   } else {
     Object.entries(naive).forEach(([name, component]) => {
-      app.component(name, component);
+      app.component(name, component as DefineComponent);
     });
   }
 };
