@@ -110,6 +110,8 @@ supported, along with full compatibility for props and slots.
   important prefix (`!<class-name>`). These styles must be added as a class name
   rather than an attribute. Additionally, some styles simply can't be applied at
   all due to the limitations of Naive UI as a styled components library.
+- The overview of slides is not displayed correctly. This bug is still under
+  investigation.
 
 ## Latest Changes
 
