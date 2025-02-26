@@ -279,3 +279,49 @@ Tertiary button
 <NMarquee auto-fill>
   <NImage width="200" src="https://sli.dev/logo-title.png" />
 </NMarquee>
+
+---
+
+## `NPopover`
+
+```markdown
+<NPopover trigger="hover" :delay="500" :duration="500">
+  <template #trigger>
+    <NButton> Hover With Delay </NButton>
+  </template>
+  Lorem ipsum odor amet, consectetuer adipiscing elit.
+</NPopover>
+```
+
+<div flex justify-center gap-5 mt-5>
+
+  <NPopover trigger="hover">
+    <template #trigger>
+      <NButton> Hover </NButton>
+    </template>
+    Lorem ipsum odor amet, consectetuer adipiscing elit.
+  </NPopover>
+
+  <NPopover trigger="click">
+    <template #trigger>
+      <NButton> Click With Sections </NButton>
+    </template>
+    <template #header>
+      <NText strong depth="1">
+        Header
+      </NText>
+    </template>
+    Lorem ipsum odor amet, consectetuer adipiscing elit.
+    <template #footer>
+      Footer
+    </template>
+  </NPopover>
+
+  <NPopover trigger="hover" :delay="500" :duration="500">
+    <template #trigger>
+      <NButton> Hover With Delay </NButton>
+    </template>
+    Lorem ipsum odor amet, consectetuer adipiscing elit.
+  </NPopover>
+
+</div>
