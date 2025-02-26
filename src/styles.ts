@@ -1,7 +1,6 @@
-import { type ComputedRef, type Plugin, computed, watch } from "vue";
+import { type Plugin, watch } from "vue";
 
-import { type GlobalThemeOverrides } from "naive-ui";
-
+import config from "./useConfig";
 import multiplier from "./useMultiplier";
 import { debug, deriveSize } from "./utils";
 
@@ -17,7 +16,8 @@ const DEFAULT_FONT_SIZES = {
 } as const;
 
 /** Theme overrides injected to Naive context */
-export const themeOverrides: ComputedRef<GlobalThemeOverrides> = computed(
+watch(
+  multiplier,
   () => {
     const derivedFontSizes = Object.fromEntries(
       Object.entries(DEFAULT_FONT_SIZES).map(([variant, size]) => [
@@ -28,8 +28,12 @@ export const themeOverrides: ComputedRef<GlobalThemeOverrides> = computed(
 
     debug("Derived font sizes:", derivedFontSizes);
 
-    return { common: derivedFontSizes };
+    config.value.common = {
+      ...config.value.common,
+      ...derivedFontSizes,
+    };
   },
+  { immediate: true },
 );
 
 /** Styles set directly in DOM */
