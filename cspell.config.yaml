@@ -6,6 +6,7 @@ useGitignore: true
 words:
   - bunx
   - consectetuer
+  - headmatter
   - hoverable
   - licence
   - monolisa
