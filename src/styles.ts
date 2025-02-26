@@ -16,28 +16,25 @@ const DEFAULT_FONT_SIZES = {
 } as const;
 
 /** Theme overrides injected to Naive context */
-watch(
-  multiplier,
-  () => {
-    const derivedFontSizes = Object.fromEntries(
-      Object.entries(DEFAULT_FONT_SIZES).map(([variant, size]) => [
-        `fontSize${variant.charAt(0).toUpperCase() + variant.slice(1)}`,
-        deriveSize(size, multiplier.value),
-      ]),
-    );
+const setThemeOverrides = () => {
+  // derived font sizes
+  const derivedFontSizes = Object.fromEntries(
+    Object.entries(DEFAULT_FONT_SIZES).map(([variant, size]) => [
+      `fontSize${variant.charAt(0).toUpperCase() + variant.slice(1)}`,
+      deriveSize(size, multiplier.value),
+    ]),
+  );
 
-    debug("Derived font sizes:", derivedFontSizes);
+  debug("Derived font sizes:", derivedFontSizes);
 
-    config.value.common = {
-      ...config.value.common,
-      ...derivedFontSizes,
-    };
-  },
-  { immediate: true },
-);
+  config.value.common = {
+    ...config.value.common,
+    ...derivedFontSizes,
+  };
+};
 
-/** Styles set directly in DOM */
-const setStyles = () => {
+/** Design tokens set directly in DOM */
+const setDesignTokens = () => {
   // set font size variants
   Object.entries(DEFAULT_FONT_SIZES).forEach(([variant, size]) => {
     document.documentElement.style.setProperty(
@@ -59,9 +56,13 @@ const setStyles = () => {
   document.head.appendChild(style);
 };
 
-const styles: Plugin = () => {
-  setStyles(); // set initial styles immediately
-  watch(multiplier, setStyles);
-};
-
-export default styles;
+export default (() => {
+  watch(
+    multiplier,
+    () => {
+      setDesignTokens();
+      setThemeOverrides();
+    },
+    { immediate: true },
+  );
+}) as Plugin;
