@@ -16,7 +16,7 @@ const configProvider: Plugin = (app) => {
   app.provide<Partial<ConfigProviderInjection>>("n-config-provider", {
     mergedClsPrefixRef: ref("n"),
     mergedThemeOverridesRef: computed(() => {
-      const { darkThemeOverrides, lightThemeOverrides, ...themeOverrides } =
+      const { lightThemeOverrides, darkThemeOverrides, ...themeOverrides } =
         config.value;
       return {
         ...themeOverrides,

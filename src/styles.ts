@@ -17,7 +17,6 @@ const DEFAULT_FONT_SIZES = {
 
 /** Theme overrides injected to Naive context */
 const setThemeOverrides = () => {
-  // derived font sizes
   const derivedFontSizes = Object.fromEntries(
     Object.entries(DEFAULT_FONT_SIZES).map(([variant, size]) => [
       `fontSize${variant.charAt(0).toUpperCase() + variant.slice(1)}`,
@@ -27,12 +26,9 @@ const setThemeOverrides = () => {
 
   debug("Derived font sizes:", derivedFontSizes);
 
-  config.value = {
-    ...config.value,
-    // common: {
-    //   ...config.value.common,
-    //   ...derivedFontSizes,
-    // },
+  config.value.common = {
+    ...derivedFontSizes,
+    ...config.value.common, // custom config prioritized
   };
 };
 
@@ -59,7 +55,7 @@ const setDesignTokens = () => {
   document.head.appendChild(style);
 };
 
-export default (() => {
+const styles: Plugin = () => {
   watch(
     multiplier,
     () => {
@@ -68,4 +64,6 @@ export default (() => {
     },
     { immediate: true },
   );
-}) as Plugin;
+};
+
+export default styles;
