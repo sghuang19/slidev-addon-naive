@@ -28,9 +28,9 @@ export const extractComponents = (filepath: string): string[] => {
 // see https://sli.dev/custom/config-parser
 export default definePreparserSetup(({ filepath }) => {
   try {
-    process.env.NAIVE_COMPONENTS = extractComponents(filepath)
-      .filter((component) => component in naive)
-      .toString();
+    globalThis.__SLIDEV_NAIVE_COMPONENTS__ = extractComponents(filepath).filter(
+      (component) => component in naive,
+    );
   } catch (error) {
     console.error(
       "  [Naive] Failed to extract Naive UI components, tree-shaking disabled:",
