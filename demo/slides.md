@@ -5,6 +5,14 @@ transition: fade
 fonts:
   sans: ml, Robot
   mono: ml, Fira Code
+naive:
+  # see https://naiveui.com/en-US/os-theme/docs/customize-theme
+  common:
+    primaryColor: "#AA0000"
+  Button:
+    textColor: "#FF0000"
+  lightThemeOverrides:
+  darkThemeOverrides:
 ---
 
 # `slidev-addon-naive`
