@@ -11,17 +11,18 @@ import isDark from "./useDarkMode";
  * https://naiveui.com/en-US/os-theme/docs/theme
  */
 
-const { darkThemeOverrides, lightThemeOverrides, ...themeOverrides } =
-  config.value;
-
 const configProvider: Plugin = (app) => {
   /* eslint sort-keys: "error" */
   app.provide<Partial<ConfigProviderInjection>>("n-config-provider", {
     mergedClsPrefixRef: ref("n"),
-    mergedThemeOverridesRef: computed(() => ({
-      ...themeOverrides,
-      ...(isDark.value ? darkThemeOverrides : lightThemeOverrides),
-    })),
+    mergedThemeOverridesRef: computed(() => {
+      const { darkThemeOverrides, lightThemeOverrides, ...themeOverrides } =
+        config.value;
+      return {
+        ...themeOverrides,
+        ...(isDark.value ? darkThemeOverrides : lightThemeOverrides),
+      };
+    }),
     mergedThemeRef: computed(() => (isDark.value ? darkTheme : lightTheme)),
   });
 };

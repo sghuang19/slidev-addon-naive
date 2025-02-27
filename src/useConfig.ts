@@ -7,4 +7,6 @@ export type Config = GlobalThemeOverrides & {
   darkThemeOverrides?: GlobalThemeOverrides;
 };
 
-export default ref<Config>({});
+const config = ref<Config>({});
+
+export default config;

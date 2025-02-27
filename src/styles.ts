@@ -27,9 +27,12 @@ const setThemeOverrides = () => {
 
   debug("Derived font sizes:", derivedFontSizes);
 
-  config.value.common = {
-    ...config.value.common,
-    ...derivedFontSizes,
+  config.value = {
+    ...config.value,
+    // common: {
+    //   ...config.value.common,
+    //   ...derivedFontSizes,
+    // },
   };
 };
 
