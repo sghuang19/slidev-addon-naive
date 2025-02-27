@@ -6,7 +6,7 @@ import { definePreparserSetup } from "@slidev/types";
 
 import naive from "naive-ui";
 
-import { debug } from "../src/utils";
+import { debug, removeNullish } from "../src/utils";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -40,7 +40,7 @@ export default definePreparserSetup(({ filepath, headmatter }) => {
   }
 
   /* pass Naive config */
-  globalThis.__SLIDEV_NAIVE_CONFIG__ = headmatter.naive ?? {};
+  globalThis.__SLIDEV_NAIVE_CONFIG__ = removeNullish(headmatter.naive ?? {});
 
   /* do nothing */
   return [];
