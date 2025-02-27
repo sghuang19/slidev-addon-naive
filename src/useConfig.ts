@@ -1,12 +1,7 @@
 import { ref } from "vue";
 
-import { type GlobalThemeOverrides } from "naive-ui";
+import { config as rawConfig } from "virtual:naive";
 
-export type Config = GlobalThemeOverrides & {
-  lightThemeOverrides?: GlobalThemeOverrides;
-  darkThemeOverrides?: GlobalThemeOverrides;
-};
-
-const config = ref<Config>({});
+const config = ref<NaiveConfig>(rawConfig);
 
 export default config;
