@@ -8,9 +8,9 @@ fonts:
 naive:
   # see https://naiveui.com/en-US/os-theme/docs/customize-theme
   common:
-    primaryColor: "#AA0000"
+    # primaryColor: "#0000FF"
   Button:
-    textColor: "#FF0000"
+    # textColor: "#FF0000"
   lightThemeOverrides:
   darkThemeOverrides:
 ---
