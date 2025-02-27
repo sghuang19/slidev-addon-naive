@@ -16,5 +16,11 @@ export default ts.config(
         projectService: true,
       },
     },
+    rules: {
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        { argsIgnorePattern: "^_" },
+      ],
+    },
   },
 );
