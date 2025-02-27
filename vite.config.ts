@@ -13,9 +13,12 @@ const naivePlugin = (): Plugin => {
     },
     load(id) {
       if (id === resolvedVirtualModuleId) {
-        return `export { ${
-          globalThis.__SLIDEV_NAIVE_COMPONENTS__?.join(",") ?? "default"
-        } } from "naive-ui";`;
+        return (
+          `export { ${
+            globalThis.__SLIDEV_NAIVE_COMPONENTS__?.join(",") ?? "default"
+          } } from "naive-ui";` +
+          `export const config = ${JSON.stringify(globalThis.__SLIDEV_NAIVE_CONFIG__)};`
+        );
       }
     },
   };
