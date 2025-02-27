@@ -14,7 +14,7 @@ const naivePlugin = (): Plugin => {
     load(id) {
       if (id === resolvedVirtualModuleId) {
         return `export { ${
-          process.env.NAIVE_COMPONENTS ?? "default"
+          globalThis.__SLIDEV_NAIVE_COMPONENTS__?.join(",") ?? "default"
         } } from "naive-ui";`;
       }
     },
