@@ -104,6 +104,13 @@ supported, along with full compatibility for props and slots.
 >    in Markdown files.
 > 2. Pascal Case convention aligns with other components used in Slidev.
 
+## Theme Config
+
+> [!WARNING]
+>
+> The theme configuration changes in headmatter will only take effect after
+> restarting dev server, since they're loaded through Vite virtual module.
+
 ## Known Issues
 
 - For specific components, some styles can only be applied using UnoCSS's
