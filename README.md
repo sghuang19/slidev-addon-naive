@@ -1,4 +1,4 @@
-# slidev-addon-naive
+# `slidev-addon-naive`
 
 A [Slidev](https://sli.dev) addon that brings [Naive UI](https://naiveui.com)
 components to your slides.
@@ -23,7 +23,7 @@ yarn add slidev-addon-naive
 bun add slidev-addon-naive
 ```
 
-## As a Slidev Addon
+### As a Slidev Addon
 
 Then, enable this addon for your slides using front matter:
 
@@ -49,7 +49,7 @@ Alternatively, you can enable the addon by adding the following property into
 }
 ```
 
-## As a Vue Plugin
+### As a Vue Plugin
 
 > [!WARNING]
 >
@@ -106,6 +106,40 @@ supported, along with full compatibility for props and slots.
 
 ## Theme Config
 
+You can customize the Naive UI theme directly in your presentation's
+[headmatter](https://sli.dev/guide/syntax#frontmatter). The theming system
+provides flexible options:
+
+- **Common overrides**: Apply to all components across your presentation
+- **Component-specific overrides**: Target individual component styling
+- **Light/dark mode variants**: Configure different styles for each mode
+
+For the complete list of customizable theme variables, refer to the
+[Naive UI theme customization documentation](https://naiveui.com/en-US/os-theme/docs/customize-theme)
+and
+[Naive UI source code](https://github.com/tusen-ai/naive-ui/tree/main/src/_styles/common).
+
+Here's an example configuration:
+
+```yaml
+naive:
+  common:
+    primaryColor: "#3366FF"
+    fontSize: "20px"
+  Button:
+    textColor: "#FFFFFF"
+  lightThemeOverrides:
+    common:
+      primaryColor: "#3366FF"
+    Button:
+      textColor: "#000000"
+  darkThemeOverrides:
+    common:
+      primaryColor: "#5C85FF"
+    Button:
+      textColor: "#FFFFFF"
+```
+
 > [!WARNING]
 >
 > The theme configuration changes in headmatter will only take effect after
@@ -117,8 +151,6 @@ supported, along with full compatibility for props and slots.
   important prefix (`!<class-name>`). These styles must be added as a class name
   rather than an attribute. Additionally, some styles simply can't be applied at
   all due to the limitations of Naive UI as a styled components library.
-- The overview of slides is not displayed correctly. This bug is still under
-  investigation.
 
 ## Latest Changes
 
