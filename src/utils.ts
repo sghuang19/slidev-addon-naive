@@ -2,6 +2,15 @@ import createDebug from "debug";
 
 export const debug = createDebug("slidev:naive");
 
+/** Returns an object with all nullish properties removed */
+export const removeNullish = <T extends object>(obj: T) => {
+  return Object.fromEntries(
+    Object.entries(obj).filter(([_, v]) => v != null),
+  ) as {
+    [K in keyof T as T[K] extends null | undefined ? never : K]: T[K];
+  };
+};
+
 const parseSize = (size: string): { value: number; unit: string } | null => {
   const match = /^(\d+(?:\.\d+)?)(px|rem|em)$/.exec(size);
   if (!match) {

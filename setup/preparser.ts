@@ -6,7 +6,7 @@ import { definePreparserSetup } from "@slidev/types";
 
 import naive from "naive-ui";
 
-import { debug } from "../src/utils";
+import { debug, removeNullish } from "../src/utils";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -26,7 +26,8 @@ export const extractComponents = (filepath: string): string[] => {
 };
 
 // see https://sli.dev/custom/config-parser
-export default definePreparserSetup(({ filepath }) => {
+export default definePreparserSetup(({ filepath, headmatter }) => {
+  /* extract components */
   try {
     globalThis.__SLIDEV_NAIVE_COMPONENTS__ = extractComponents(filepath).filter(
       (component) => component in naive,
@@ -37,5 +38,10 @@ export default definePreparserSetup(({ filepath }) => {
       error,
     );
   }
-  return []; // do nothing
+
+  /* pass Naive config */
+  globalThis.__SLIDEV_NAIVE_CONFIG__ = removeNullish(headmatter.naive ?? {});
+
+  /* do nothing */
+  return [];
 });
